@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload & Capture</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Capture  Image</h1>
+        </header>
+
+        <main>
+            <div class="image-upload-section">
+                <div class="button-container">
+                    <button id="groceryBtn" aria-label="Upload Image">
+                        <img src="upload-icon.png" alt="Upload Icon">
+                        <h3>Grocery-Items</h3>
+                    </button>
+                </div>
+                <div class="button-container">
+                    <button id="freshproduceBtn" aria-label="Upload Image">
+                        <img src="camera-icon.png" alt="Upload Icon">
+                        <h3>Fresh-produce</h3>
+                    </button>
+                </div>
+            </div>
+
+            <div id="imageContainer" class="image-container">
+                <p>No image selected</p>
+            </div>
+            <div class="end-buttons">
+                <button id="captureBtn" >
+                    <h3>Capture Photo</h3>
+                </button>
+                <canvas id="photoCanvas" style="display:none;"></canvas>
+                <button class="details">
+                    <h3>Get-Details</h3>
+                </button>
+            </div>
+
+            <!-- Table container where results will be displayed -->
+            <div id="tableContainer" class="table-container">
+                <!-- Table will be dynamically inserted here by JS -->
+            </div>
+        </main>
+
+    </div>
+
+    <script src="static/js/capturescript.js"></script>
+</body>
+</html>
