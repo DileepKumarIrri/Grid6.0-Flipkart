@@ -9,8 +9,14 @@
 <body>
     <div class="container">
         <header>
-            <h1>Capture  Image</h1>
+            <h1>Capture Image</h1>
         </header>
+
+        <!-- Camera Selection Dropdown -->
+        <div class="camera-selection">
+            <label for="cameraSelect"><strong>Select Camera:</strong></label>
+            <select id="cameraSelect"></select>
+        </div>
 
         <main>
             <div class="image-upload-section">
@@ -28,11 +34,14 @@
                 </div>
             </div>
 
+
+
             <div id="imageContainer" class="image-container">
                 <p>No image selected</p>
             </div>
+
             <div class="end-buttons">
-                <button id="captureBtn" >
+                <button id="captureBtn">
                     <h3>Capture Photo</h3>
                 </button>
                 <canvas id="photoCanvas" style="display:none;"></canvas>
@@ -41,14 +50,9 @@
                 </button>
             </div>
 
-            <!-- Table container where results will be displayed -->
-            <!-- <div id="tableContainer" class="table-container"> -->
-                <!-- Table will be dynamically inserted here by JS -->
-            <!-- </div> -->
-
             <div id="loader" class="loader hidden">
                 <img src="static/images/loader.gif" alt="Loading...">
-                <br><p>Processing, please wait...</p>
+                <p>Processing, please wait...</p>
             </div>
             <div id="tableContainer" class="table-container" style="margin-top:20px">
             </div>

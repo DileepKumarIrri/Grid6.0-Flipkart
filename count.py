@@ -146,6 +146,7 @@ def count_grocery_items(image_path, api_key):
     response = requests.request("POST", url, headers=headers, data=json.dumps(payload))
 
     response_json = response.json()
+    print(response_json)
 
     # Extract the assistant's message content
     assistant_content = response_json['choices'][0]['message']['content']
