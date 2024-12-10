@@ -5,7 +5,7 @@ from werkzeug.utils import secure_filename
 from datetime import datetime
 from dotenv import load_dotenv
 from count import count_grocery_items 
-# from freshness import analyze_image
+from freshness import analyze_image
 
 
 # Load environment variables
@@ -26,7 +26,7 @@ if not os.path.exists(UPLOAD_FOLDER):
 
 API_KEY = os.getenv("fireworks_API_KEY")
 if not API_KEY:
-    raise Exception("API key not found. Please set the GOOGLE_API_KEY environment variable.")
+    raise Exception("API key not found. Please set the fireworks_API_KEY environment variable.")
 else:
     fireworks_api_key = API_KEY
 
