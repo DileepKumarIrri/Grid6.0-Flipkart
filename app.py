@@ -5,7 +5,7 @@ from werkzeug.utils import secure_filename
 from datetime import datetime
 from dotenv import load_dotenv
 from count import count_grocery_items 
-# from freshness import analyze_image
+from freshness import analyze_image
 
 
 # Load environment variables
