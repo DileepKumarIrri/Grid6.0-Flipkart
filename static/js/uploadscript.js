@@ -90,7 +90,7 @@ function displayTable(data, buttonType) {
 
 
     // Display total items first
-    const totalItemsHTML = `<h2 style="margin-top:20px; text-align: left;"><strong>Total Items: ${data.total_items}</strong></h2>`;
+    const totalItemsHTML = `<h2 style="margin-top:20px; text-align: left; color:black"><strong>Total Items: ${data.total_items}</strong></h2>`;
     console.log(totalItemsHTML)
 
     let tableHTML = '';

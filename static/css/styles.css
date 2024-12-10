@@ -6,13 +6,15 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #065bba;
     color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    overflow-y: auto;
+    padding: 20px;
 }
 
 .container {
@@ -23,6 +25,9 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: auto; /* Adds spacing from the top dynamically */
+    margin-bottom: auto; /* Centers the container while growing */
+    transition: margin 0.3s ease; /* Smooth adjustment */
 }
 
 header {
@@ -47,7 +52,7 @@ h1 {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background: white;
+    background: rgba(255, 255, 255, 0.847);
     color: #121212;
     border: none;
     border-radius: 8px;
@@ -58,8 +63,13 @@ h1 {
     height: 200px;
   }
 
+  .button-container button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.975);
+  }
+
 button {
-    background-color: #3498db;
+    background-color: #065bba;
     border: none;
     padding: 10px 20px;
     font-size: 1rem;
@@ -77,7 +87,7 @@ button img {
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #065bba;
 }
 
 /* Image container */
@@ -108,10 +118,17 @@ button:hover {
     gap: 100px;
 }
 
+.end-buttons button:hover {
+    transform: translateY(-5px);
+    background-color:  #02744b;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.975);
+  }
+
+
 .details{
     margin-top: 20px;
     margin-left: 370px;
-    background-color: #3498db;
+    background-color:  #065bba;
     border: none;
     padding: 10px 20px;
     font-size: 1rem;
@@ -122,6 +139,13 @@ button:hover {
     align-items: center;
     gap: 10px;
 }
+
+
+.details-container button:hover {
+    transform: translateY(-5px);
+    background-color:  #02744b;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.975);
+  }
 
 /* Loader container */
 .loader {
@@ -187,11 +211,36 @@ table tr:hover {
 
 
 
+/* Responsive Layout Adjustments */
+@media (max-width: 1024px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
 
+    .button-container button {
+        width: 300px; /* Adjust button size for smaller laptops */
+        height: 180px;
+    }
+
+    h1 {
+        font-size: 3rem; /* Reduce font size */
+    }
+
+    .image-upload-section {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 20px;
+    }
+}
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2.5rem; /* Further reduce font size for mobile */
+    }
+
+    .button-container button {
+        width: 250px; /* Smaller button sizes */
+        height: 150px;
     }
 
     button {
@@ -200,7 +249,34 @@ table tr:hover {
     }
 
     .image-upload-section {
-        flex-direction: column;
+        flex-direction: column; /* Stack buttons vertically */
         gap: 15px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .image-container img.uploaded-image {
+        max-height: 150px; /* Reduce image height on mobile */
+    }
+
+    .table-container {
+        overflow-x: auto; /* Enable horizontal scrolling for tables */
+    }
+}
+
+@media (max-width: 480px) {
+    .button-container button {
+        width: 100%; /* Full-width buttons for very small devices */
+    }
+
+    h1 {
+        font-size: 2rem; /* Font size for very small devices */
+    }
+
+    .image-container img.uploaded-image {
+        max-height: 120px; /* Further reduce image height */
     }
 }

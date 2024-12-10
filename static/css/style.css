@@ -8,7 +8,7 @@
   body {
     font-family: Arial, sans-serif;
     background-color: #121212;
-    background: linear-gradient(to right, #6608cc 15%, #121212 40%);
+    background: linear-gradient(to right, #065bba 15%, #121212 70%);
     color: white;
     line-height: 1.6;
   }
@@ -100,7 +100,7 @@
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.5s ease;
     width: 350px;
     height: 200px;
   }
@@ -112,7 +112,7 @@
   }
   
   .button-text h2 small {
-    color: #424141f0; /* Light gray color */
+    color: #151212f0; /* Light gray color */
     font-size: 0.8em; /* Slightly smaller font */
     font-weight: 300; /* Light font weight */
 }
@@ -124,7 +124,7 @@
   .button-container .icon {
     font-size: 24px;
     margin-right: 15px;
-    color: #9b51e0;
+    color: #065bba;
   }
   
   .button-container span {
