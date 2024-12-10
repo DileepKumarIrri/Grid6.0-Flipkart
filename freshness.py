@@ -48,7 +48,7 @@ prompt = ChatPromptTemplate.from_messages(
 parser = StrOutputParser()
 
 # Analysis function
-def analyze_image(file_path, api_key):
+def analyze_image(file_path):
     try:
         with open(file_path, "rb") as file:
             bytes_data = file.read()

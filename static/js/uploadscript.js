@@ -17,6 +17,13 @@ function uploadImage() {
     input.accept = 'image/*';
     input.click();
 
+    // Clear the image container and table when a new image is uploaded
+    const imageContainer = document.getElementById('imageContainer');
+    const tableContainer = document.getElementById('tableContainer');
+    imageContainer.innerHTML = '<p>No image selected</p>'; // Reset image preview
+    tableContainer.innerHTML = ''; // Clear previous table content
+    tableContainer.style.display = 'none'; // Hide table container
+
     input.addEventListener('change', function(event) {
         const file = event.target.files[0];
         if (file) {
@@ -36,6 +43,9 @@ document.querySelector('.details').addEventListener('click', function() {
         alert('No image selected');
         return;
     }
+
+    // Show the loader when "Get-Details" is clicked
+    document.getElementById('loader').classList.remove('hidden');
 
     // Get the image as a Blob
     fetch(imageElement.src)
@@ -57,6 +67,10 @@ document.querySelector('.details').addEventListener('click', function() {
             })
             .catch(error => {
                 console.error('Error:', error);
+            })
+            .finally(() => {
+                // Hide the loader once data is processed
+                document.getElementById('loader').classList.add('hidden');
             });
         });
 });
@@ -67,10 +81,13 @@ function displayTable(data, buttonType) {
 
     if (!data || data.length === 0) {
         tableContainer.innerHTML = '<p>No data available to display</p>';
+        tableContainer.style.display = 'block'; // Show the container with the message
         return;
     }
 
     tableContainer.innerHTML = ''; // Clear previous data
+    tableContainer.style.display = 'block'; // Show the container when data is available
+
 
     // Display total items first
     const totalItemsHTML = `<h2 style="margin-top:20px; text-align: left;"><strong>Total Items: ${data.total_items}</strong></h2>`;

@@ -56,6 +56,10 @@ document.getElementById('captureBtn').addEventListener('click', function() {
 
         // Hide the video element
         videoElement = null; // Reset video element
+        // Clear the image container and table when a new image is uploaded
+        const tableContainer = document.getElementById('tableContainer');
+        tableContainer.innerHTML = ''; // Clear previous table content
+        tableContainer.style.display = 'none'; // Hide table container
     } else {
         alert("No video feed available to capture.");
     }
@@ -69,6 +73,9 @@ document.querySelector('.details').addEventListener('click', function() {
         alert('No image captured or uploaded');
         return;
     }
+
+     // Show the loader when "Get-Details" is clicked
+     document.getElementById('loader').classList.remove('hidden');
 
     // Get the image as a Blob
     fetch(imageElement.src)
@@ -90,6 +97,10 @@ document.querySelector('.details').addEventListener('click', function() {
             })
             .catch(error => {
                 console.error('Error:', error);
+            })
+            .finally(() => {
+                // Hide the loader once data is processed
+                document.getElementById('loader').classList.add('hidden');
             });
         });
 });
@@ -100,10 +111,12 @@ function displayTable(data, buttonType) {
 
     if (!data || data.length === 0) {
         tableContainer.innerHTML = '<p>No data available to display</p>';
+        tableContainer.style.display = 'block'; // Show the container with the message
         return;
     }
 
     tableContainer.innerHTML = ''; // Clear previous data
+    tableContainer.style.display = 'block'; // Show the container when data is available
 
     // Display total items first
     const totalItemsHTML = `<h2 style="margin-top:20px; text-align: left;"><strong>Total Items: ${data.total_items}</strong></h2>`;
