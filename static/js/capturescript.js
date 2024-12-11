@@ -104,7 +104,7 @@ document.querySelector('.details').addEventListener('click', function() {
             })
             .then(response => response.json()) 
             .then(data => {
-                console.log(data)
+                console.log('HIO',data)
                 displayTable(data, buttonType);
                 showDownloadButton();
             })
