@@ -136,6 +136,101 @@ button:hover {
     background-color: #065bba;
 }
 
+/* Styling for the camera selection container */
+.camera-selection {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.camera-selection strong{
+    font-size: 150%;
+    margin-left: 250px;
+}
+
+.camera-selection label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #333; /* Dark gray color for the label text */
+}
+
+#cameraSelect {
+    width: 200px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    border: 2px solid #4CAF50; /* Green border */
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#cameraSelect:hover {
+    border-color: #45a049; /* Darker green border on hover */
+}
+
+#cameraSelect:focus {
+    border-color: #2196F3; /* Blue border on focus */
+    box-shadow: 0 0 8px rgba(33, 150, 243, 0.5); /* Glow effect */
+}
+
+#cameraSelect option {
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .camera-selection {
+        flex-direction: column; /* Stack label and select on top of each other */
+        align-items: flex-start; /* Align content to the start */
+        margin-bottom: 20px;
+    }
+
+    .camera-selection strong {
+        font-size: 1.2rem; 
+        margin-left: 0; /* Reset margin for mobile */
+    }
+
+    .camera-selection label {
+        font-size: 1rem; 
+        margin-bottom: 10px; /* Space below the label */
+    }
+
+    #cameraSelect {
+        width: 100%; /* Full width for select box */
+        font-size: 1rem; 
+        padding: 12px; /* Increase padding for better touch experience */
+    }
+}
+
+@media (max-width: 480px) {
+    .camera-selection {
+        flex-direction: column; /* Stack elements on top of each other */
+        align-items: flex-start; /* Align content to the start */
+    }
+
+    .camera-selection strong {
+        font-size: 1rem; /* Smaller font size for smaller screens */
+    }
+
+    .camera-selection label {
+        font-size: 0.9rem; /* Smaller font size */
+        margin-bottom: 8px; 
+    }
+
+    #cameraSelect {
+        width: 100%; /* Full width for mobile */
+        font-size: 0.9rem; 
+        padding: 10px; 
+    }
+}
+
+
 /* Image container */
 .image-container img.uploaded-image {
     max-width: 100%; /* Ensures image width never exceeds container */
