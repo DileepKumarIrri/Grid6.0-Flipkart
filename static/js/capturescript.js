@@ -1,6 +1,20 @@
 let currentStream = null;
 let videoElement = null;
+let currentStream = null;
+let videoElement = null;
 let buttonType = '';
+
+// Populate available cameras
+navigator.mediaDevices.enumerateDevices().then(devices => {
+    const videoDevices = devices.filter(device => device.kind === 'videoinput');
+    const cameraSelect = document.getElementById('cameraSelect');
+    videoDevices.forEach((device, index) => {
+        const option = document.createElement('option');
+        option.value = device.deviceId;
+        option.text = device.label || `Camera ${index + 1}`;
+        cameraSelect.appendChild(option);
+    });
+});
 
 // Populate available cameras
 navigator.mediaDevices.enumerateDevices().then(devices => {
@@ -29,7 +43,14 @@ document.getElementById('freshproduceBtn').addEventListener('click', function() 
 // Start camera function
 function startCamera() {
     const selectedCameraId = document.getElementById('cameraSelect').value;
+    const selectedCameraId = document.getElementById('cameraSelect').value;
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        const constraints = {
+            video: { 
+                deviceId: selectedCameraId ? { exact: selectedCameraId } : undefined 
+            }
+        };
+        navigator.mediaDevices.getUserMedia(constraints)
         const constraints = {
             video: { 
                 deviceId: selectedCameraId ? { exact: selectedCameraId } : undefined 
@@ -41,10 +62,14 @@ function startCamera() {
                 if (videoElement) {
                     videoElement.srcObject = null; // Clear the existing video stream
                 }
+                if (videoElement) {
+                    videoElement.srcObject = null; // Clear the existing video stream
+                }
                 videoElement = document.createElement('video');
                 videoElement.srcObject = stream;
                 videoElement.play();
                 const imageContainer = document.getElementById('imageContainer');
+                imageContainer.innerHTML = ''; // Clear previous content
                 imageContainer.innerHTML = ''; // Clear previous content
                 imageContainer.appendChild(videoElement);
             })
@@ -56,6 +81,7 @@ function startCamera() {
     }
 }
 
+// Capture photo
 // Capture photo
 document.getElementById('captureBtn').addEventListener('click', function() {
     if (videoElement) {
@@ -73,7 +99,10 @@ document.getElementById('captureBtn').addEventListener('click', function() {
         const imageContainer = document.getElementById('imageContainer');
         imageContainer.innerHTML = `<img src="${imgURL}" alt="Captured Image" class="captured-image">`;
         videoElement = null;
+        videoElement = null;
         const tableContainer = document.getElementById('tableContainer');
+        tableContainer.innerHTML = ''; 
+        tableContainer.style.display = 'none'; 
         tableContainer.innerHTML = ''; 
         tableContainer.style.display = 'none'; 
     } else {
@@ -81,6 +110,7 @@ document.getElementById('captureBtn').addEventListener('click', function() {
     }
 });
 
+// Send image to server
 // Send image to server
 document.querySelector('.details').addEventListener('click', function() {
     const imageElement = document.querySelector('.captured-image');
@@ -90,6 +120,7 @@ document.querySelector('.details').addEventListener('click', function() {
     }
 
     document.getElementById('loader').classList.remove('hidden');
+    document.getElementById('loader').classList.remove('hidden');
 
     fetch(imageElement.src)
         .then(res => res.blob())
@@ -97,11 +128,14 @@ document.querySelector('.details').addEventListener('click', function() {
             const formData = new FormData();
             formData.append('image', blob, 'captured_image.png'); 
             formData.append('button_type', buttonType);
+            formData.append('image', blob, 'captured_image.png'); 
+            formData.append('button_type', buttonType);
 
             fetch('/uploadimage', {
                 method: 'POST',
                 body: formData
             })
+            .then(response => response.json()) 
             .then(response => response.json()) 
             .then(data => {
                 displayTable(data, buttonType);
@@ -117,10 +151,12 @@ document.querySelector('.details').addEventListener('click', function() {
 });
 
 // Display Table
+// Display Table
 function displayTable(data, buttonType) {
     const tableContainer = document.getElementById('tableContainer');
     if (!data || data.length === 0) {
         tableContainer.innerHTML = '<p>No data available to display</p>';
+        tableContainer.style.display = 'block'; 
         tableContainer.style.display = 'block'; 
         return;
     }
@@ -146,6 +182,19 @@ function displayTable(data, buttonType) {
             <tbody>
     `;
 
+    data.table_data.forEach(item => {
+        tableHTML += `
+            <tr>
+                <td>${item["Sl no"]}</td>
+                <td>${item["Timestamp"]}</td>
+                <td>${item["Brand"]}</td>
+                <td>${item["Expiry date"]}</td>
+                <td>${item["Count"]}</td>
+                <td>${item["Expired"]}</td>
+                <td>${item["Expected life span (Days)"]}</td>
+            </tr>
+        `;
+    });
     data.table_data.forEach(item => {
         tableHTML += `
             <tr>
