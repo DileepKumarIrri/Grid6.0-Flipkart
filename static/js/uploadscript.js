@@ -64,6 +64,7 @@ document.querySelector('.details').addEventListener('click', function() {
             .then(data => {
                 // console.log(data, "data")
                 displayTable(data, buttonType); // Call function to display table
+                showDownloadButton();
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -91,7 +92,7 @@ function displayTable(data, buttonType) {
 
     // Display total items first
     const totalItemsHTML = `<h2 style="margin-top:20px; text-align: left; color:black"><strong>Total Items: ${data.total_items}</strong></h2>`;
-    console.log(totalItemsHTML)
+    // console.log(totalItemsHTML)
 
     let tableHTML = '';
 
@@ -162,3 +163,47 @@ function displayTable(data, buttonType) {
     // Insert total items and table into the page
     tableContainer.innerHTML = totalItemsHTML + tableHTML;
 }
+
+
+
+function showDownloadButton() {
+    const downloadButton = document.getElementById("download-btn");
+    downloadButton.style.display = "block";
+    downloadButton.addEventListener("click", downloadCSV);
+}
+
+
+// CSV download logic
+function downloadCSV() {
+    const tableContainer = document.getElementById('tableContainer');
+    const table = tableContainer.querySelector('table'); 
+    if (!table) {
+        alert('No table available for download');
+        return;
+    }
+
+    let csv = [];
+    const rows = table.querySelectorAll('tr');
+
+    for (let i = 0; i < rows.length; i++) {
+        const row = [];
+        const cols = rows[i].querySelectorAll('td, th');
+
+        for (let j = 0; j < cols.length; j++) {
+            row.push(cols[j].innerText.replace(/,/g, '')); 
+        }
+        csv.push(row.join(','));
+    }
+
+    const csvFile = new Blob([csv.join('\n')], { type: 'text/csv' });
+    const downloadLink = document.createElement('a');
+    downloadLink.download = 'table_data.csv';
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+    downloadLink.style.display = 'none';
+
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+}
+
+document.getElementById('download-btn').addEventListener('click', downloadCSV);
