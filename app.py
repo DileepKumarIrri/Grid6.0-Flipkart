@@ -5,7 +5,7 @@ from werkzeug.utils import secure_filename
 from datetime import datetime
 from dotenv import load_dotenv
 from count import count_grocery_items 
-# from freshness import analyze_image
+from freshness import analyze_image
 
 
 # Load environment variables
@@ -93,7 +93,7 @@ def upload_image():
                             item_details[key.strip()] = value.strip()
 
                     items.append(item_details)
-                print(len(items))
+                print(items)
                 response = {
                     'total_items': len(items),
                     'table_data': items
