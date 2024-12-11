@@ -10,7 +10,14 @@
     <div class="container">
         <header>
             <h1>Capture Image</h1>
+            <h1>Capture Image</h1>
         </header>
+
+        <!-- Camera Selection Dropdown -->
+        <div class="camera-selection">
+            <label for="cameraSelect"><strong>Select Camera:</strong></label>
+            <select id="cameraSelect"></select>
+        </div>
 
         <!-- Camera Selection Dropdown -->
         <div class="camera-selection">
@@ -36,11 +43,15 @@
 
 
 
+
+
             <div id="imageContainer" class="image-container">
                 <p>No image selected</p>
             </div>
 
+
             <div class="end-buttons">
+                <button id="captureBtn">
                 <button id="captureBtn">
                     <h3>Capture Photo</h3>
                 </button>
@@ -51,8 +62,12 @@
             </div>
 
             <div id="loader" class="loader hidden">
-                <img src="static\images\animation.gif" alt="Loading...">
+                <img src="static/images/loader.gif" alt="Loading...">
                 <p>Processing, please wait...</p>
+            </div>
+
+            <div class="downloadbtn">
+                <button id="download-btn">Download CSV</button>
             </div>
             <div id="tableContainer" class="table-container" style="margin-top:20px">
             </div>
@@ -63,3 +78,4 @@
     <script src="static/js/capturescript.js"></script>
 </body>
 </html>
+
