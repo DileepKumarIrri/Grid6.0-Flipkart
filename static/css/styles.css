@@ -397,6 +397,49 @@ table tr:hover {
 }
 
 
+.downloadbtn {
+    display: flex;
+    justify-content: flex-end;  
+}
+
+#download-btn {
+    display: none;
+    width: 150px; /* Set the width of the button */
+    height: 40px;
+    background-color: #02744b;
+    border: none; /* Remove border for a cleaner look */
+    color: white; /* Set text color */
+    font-size: 16px; /* Set font size */
+    cursor: pointer; /* Change cursor to pointer for better user experience */
+}
+
+#download-btn:hover {
+    transform: translateY(-5px);
+    background-color: #02744b; /* Slightly darker shade for hover effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.075);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .downloadbtn {
+        justify-content: center; /* Center the button on smaller screens */
+        padding: 10px; /* Add some padding */
+    }
+
+    #download-btn {
+        width: 100px; /* Reduce the button size on mobile */
+        height: 40px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #download-btn {
+        width: 100px; /* Further reduce the button size on very small screens */
+        height: 30px;
+    }
+}
+
 
 
 /* Responsive Layout Adjustments */
