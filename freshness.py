@@ -4,6 +4,7 @@ from google.ai.generativelanguage import Content, Part, Blob
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
+from datetime import datetime
 
 # Initialize the Google Gemini model
 llm = ChatGoogleGenerativeAI(
@@ -22,7 +23,7 @@ if not API_KEY:
 else:
     genai.configure(api_key=API_KEY)
 
-
+timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 generic_template = '''You are a knowledgeable AI assistant. Analyze the uploaded image of one or more eatable items or products for their freshness and provide a customer-friendly report using the following format:
 
 For each item detected in the image, provide the following details:
