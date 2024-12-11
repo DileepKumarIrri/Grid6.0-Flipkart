@@ -104,7 +104,6 @@ document.querySelector('.details').addEventListener('click', function() {
             })
             .then(response => response.json()) 
             .then(data => {
-                console.log('HIO',data)
                 displayTable(data, buttonType);
                 showDownloadButton();
             })
@@ -131,38 +130,74 @@ function displayTable(data, buttonType) {
     const totalItemsHTML = `<h2 style="margin-top:20px; text-align: left; color:black"><strong>Total Items: ${data.total_items}</strong></h2>`;
     console.log(totalItemsHTML)
 
-    let tableHTML = `
-        <table>
-            <thead>
+    let tableHTML = '';
+
+    if (buttonType === 'grocery') {
+        tableHTML = `
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sl no</th>
+                        <th>Timestamp</th>
+                        <th>Brand</th>
+                        <th>Expiry date</th>
+                        <th>Count</th>
+                        <th>Expired</th>
+                        <th>Expected life span (Days)</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        data.table_data.forEach(item => {
+            tableHTML += `
                 <tr>
-                    <th>Sl no</th>
-                    <th>Timestamp</th>
-                    <th>Brand</th>
-                    <th>Expiry date</th>
-                    <th>Count</th>
-                    <th>Expired</th>
-                    <th>Expected life span (Days)</th>
+                    <td>${item["Sl no"]}</td>
+                    <td>${item["Timestamp"]}</td>
+                    <td>${item["Brand"]}</td>
+                    <td>${item["Expiry date"]}</td>
+                    <td>${item["Count"]}</td>
+                    <td>${item["Expired"]}</td>
+                    <td>${item["Expected life span (Days)"]}</td>
                 </tr>
-            </thead>
-            <tbody>
+            `;
+        });
+
+    } else if (buttonType === 'freshproduce') {
+        tableHTML = `
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sl no</th>
+                        <th>Timestamp</th>
+                        <th>Produce</th>
+                        <th>Freshness</th>
+                        <th>Expected life span (Days)</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        data.table_data.forEach(item => {
+            tableHTML += `
+                <tr>
+                    <td>${item["Sl no"]}</td>
+                    <td>${item["Timestamp"]}</td>
+                    <td>${item["Produce"]}</td>
+                    <td>${item["Freshness"]}</td>
+                    <td>${item["Expected life span (Days)"]}</td>
+                </tr>
+            `;
+        });
+    }
+
+    tableHTML += `
+        </tbody>
+        </table>
     `;
 
-    data.table_data.forEach(item => {
-        tableHTML += `
-            <tr>
-                <td>${item["Sl no"]}</td>
-                <td>${item["Timestamp"]}</td>
-                <td>${item["Brand"]}</td>
-                <td>${item["Expiry date"]}</td>
-                <td>${item["Count"]}</td>
-                <td>${item["Expired"]}</td>
-                <td>${item["Expected life span (Days)"]}</td>
-            </tr>
-        `;
-    });
-
-    tableHTML += `</tbody></table>`;
-    tableContainer.innerHTML = tableHTML;
+    // Insert total items and table into the page
+    tableContainer.innerHTML = totalItemsHTML + tableHTML;
 }
 
 

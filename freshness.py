@@ -29,7 +29,7 @@ generic_template = '''You are a knowledgeable AI assistant. Analyze the uploaded
 For each item detected in the image, provide the following details:
 TotalItems: "give the total eatable items present in the image"
 Sl no:"Give the number as you go on detecting elements"
-Timestamp:"For each detected item, the timestamp should be included in the output."
+Timestamp:"For each detected item, the {timestamp} should be included in the output."
 Produce:"Name of the eatable item"
 Freshness: "Freshness index (Out of 10)"
 Expected life span (Days): Predicted Shelf Life (e.g., in days)

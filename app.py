@@ -119,8 +119,8 @@ def upload_image():
                 # Extract the rest of the table data
                 table_data = response_text[1:] if len(response_text) > 1 else []
 
-                print(total_items)
-                print(table_data)
+                # print(total_items)
+                # print(table_data)
 
                 # Send the JSON response
                 response = {
