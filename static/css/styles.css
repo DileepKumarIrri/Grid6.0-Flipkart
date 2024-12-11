@@ -493,6 +493,15 @@ table tr:hover {
         max-height: 150px; /* Reduce image height on mobile */
     }
 
+    .image-container img.captured-image{
+        max-height: 150px; /* Reduce image height on mobile */
+    }
+
+    #imageContainer video {
+        width: 100%; /* Scale video width to container width */
+        object-fit: cover; /* Maintain aspect ratio while covering the entire container */
+    }
+
     .table-container {
         overflow-x: auto; /* Enable horizontal scrolling for tables */
     }
@@ -509,5 +518,9 @@ table tr:hover {
 
     .image-container img.uploaded-image {
         max-height: 120px; /* Further reduce image height */
+    }
+
+    .image-container img.captured-image {
+        max-height: 150px; /* Reduce image height on mobile */
     }
 }
