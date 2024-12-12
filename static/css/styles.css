@@ -241,7 +241,22 @@ button:hover {
     object-fit: contain; /* Ensures the image fits without distortion */
 }
 
-.image-container {
+#imageContainer {
+    border: 2px solid #4CAF50; /* Adds a green border */
+    padding: 10px; /* Adds some space inside the container */
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 5px; /* Rounds the corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: all 0.3s ease; /* Adds a smooth transition effect */
+}
+
+#imageContainer:hover {
+    background-color: #e8f5e9; /* Slightly changes background on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhances the shadow on hover */
+}
+
+
+/* .image-container {
     padding: 20px;
     border: 2px dashed #3498db;
     min-height: 200px;
@@ -249,7 +264,7 @@ button:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
+} */
 
 #captureBtn
 {
