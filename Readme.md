@@ -57,9 +57,9 @@ Below are some of the interface images showcasing key features of the Smart Visi
 
 ---
 
----
-
 ## ⚙️ **Functionality Workflow**
+![Workflow](https://github.com/user-attachments/assets/7e73c1e9-11f7-482b-bcce-f98429f6f4a8)
+
 
 ### **Step 1: Input Stage** 📷
 - Users can choose between:
