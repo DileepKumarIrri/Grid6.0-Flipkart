@@ -26,6 +26,7 @@ else:
 timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 generic_template = '''You are a knowledgeable AI assistant. Analyze the uploaded image of one or more eatable items or products for their freshness and provide a customer-friendly report using the following format:
 
+
 For each item detected in the image, provide the following details:
 TotalItems: "give the total eatable items present in the image"
 Sl no:"Give the number as you go on detecting elements"

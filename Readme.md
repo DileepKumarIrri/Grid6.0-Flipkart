@@ -86,10 +86,10 @@ Below are some of the interface images showcasing key features of the Smart Visi
   - 📂 **CSV**
 
 ---
-
+<!-- 
 ## 🛠️ **System Design** 
 
----
+--- -->
 
 ## 💻 **Technologies Used** 
 
