@@ -97,9 +97,10 @@ def upload_image():
                             if ':' in line:
                                 key, value = line.split(":", 1)
                                 item_details[key.strip()] = value.strip()
+                            
+                        if item_details:
                             item_details["Timestamp"] = current_date_str
-
-                        items.append(item_details)
+                            items.append(item_details)
 
 
                     print(items)
