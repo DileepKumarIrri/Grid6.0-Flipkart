@@ -1,6 +1,18 @@
-__pycache__
-rough.py
-myenv
-static/uploads/
-temp/
+# Python-specific
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+myenv/
+env/
+venv/
+
+# Environment variables
 .env
+
+# Temporary files and logs
+temp/
+*.log
+
+# Static user uploads
+static/uploads/
