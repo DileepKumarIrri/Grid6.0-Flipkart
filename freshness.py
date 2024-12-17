@@ -5,6 +5,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
 from datetime import datetime
+import json
 
 # Initialize the Google Gemini model
 llm = ChatGoogleGenerativeAI(
@@ -30,7 +31,6 @@ generic_template = '''You are a knowledgeable AI assistant. Analyze the uploaded
 For each item detected in the image, provide the following details:
 TotalItems: "give the total eatable items present in the image"
 Sl no:"Give the number as you go on detecting elements"
-Timestamp:"For each detected item, the {timestamp} should be included in the output."
 Produce:"Name of the eatable item"
 Freshness: "Freshness index (Out of 10)"
 Expected life span (Days): Predicted Shelf Life (e.g., in days)
@@ -48,6 +48,41 @@ prompt = ChatPromptTemplate.from_messages(
 )
 # Output parser
 parser = StrOutputParser()
+
+import json
+
+def sanitize_and_parse_response(parsed_response):
+    try:
+        # Check if parsed_response is empty
+        if not parsed_response.strip():
+            raise ValueError("The response string is empty.")
+        
+        # Replace single quotes with double quotes and attempt to load as JSON
+        sanitized_response = parsed_response.replace("'", '"')
+        response_list = json.loads(sanitized_response)
+        
+        return response_list
+    except json.JSONDecodeError as e:
+        # Log detailed error information
+        return [{"Error": f"Failed to parse response as JSON. Error: {e}"}]
+
+
+
+def add_timestamps_to_response(parsed_response):
+    try:
+        # Sanitize and parse the response
+        response_list = sanitize_and_parse_response(parsed_response)
+
+        # Add timestamps to each item
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        for item in response_list:
+            item['Timestamp'] = timestamp
+        
+        return response_list
+    except Exception as e:
+        return [{"Error": str(e)}]
+
+
 
 # Analysis function
 def analyze_image(file_path):
@@ -67,7 +102,15 @@ def analyze_image(file_path):
 
         # Parse result
         parsed_response = parser.invoke(response.text)
-        return parsed_response
+        print(type(parsed_response))
+        
+        # Parse result
+        parsed_response = parser.invoke(response.text)
+        
+        # Add timestamps to each item
+        parsed_response_with_timestamps = add_timestamps_to_response(parsed_response)
+        
+        return parsed_response_with_timestamps
 
     except Exception as e:
         return str(e)
