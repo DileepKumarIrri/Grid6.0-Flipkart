@@ -4,9 +4,11 @@ import os
 import json
 from werkzeug.utils import secure_filename
 from datetime import datetime
+
 from dotenv import load_dotenv
 from count import count_grocery_items
-# from freshness import analyze_image
+from freshness import analyze_image
+current_date_str= datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 # Load environment variables
 load_dotenv()
@@ -95,8 +97,10 @@ def upload_image():
                             if ':' in line:
                                 key, value = line.split(":", 1)
                                 item_details[key.strip()] = value.strip()
+                            item_details["Timestamp"] = current_date_str
 
                         items.append(item_details)
+
 
                     print(items)
                     response = {

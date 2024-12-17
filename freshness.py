@@ -49,40 +49,6 @@ prompt = ChatPromptTemplate.from_messages(
 # Output parser
 parser = StrOutputParser()
 
-import json
-
-def sanitize_and_parse_response(parsed_response):
-    try:
-        # Check if parsed_response is empty
-        if not parsed_response.strip():
-            raise ValueError("The response string is empty.")
-        
-        # Replace single quotes with double quotes and attempt to load as JSON
-        sanitized_response = parsed_response.replace("'", '"')
-        response_list = json.loads(sanitized_response)
-        
-        return response_list
-    except json.JSONDecodeError as e:
-        # Log detailed error information
-        return [{"Error": f"Failed to parse response as JSON. Error: {e}"}]
-
-
-
-def add_timestamps_to_response(parsed_response):
-    try:
-        # Sanitize and parse the response
-        response_list = sanitize_and_parse_response(parsed_response)
-
-        # Add timestamps to each item
-        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        for item in response_list:
-            item['Timestamp'] = timestamp
-        
-        return response_list
-    except Exception as e:
-        return [{"Error": str(e)}]
-
-
 
 # Analysis function
 def analyze_image(file_path):
@@ -103,14 +69,11 @@ def analyze_image(file_path):
         # Parse result
         parsed_response = parser.invoke(response.text)
         print(type(parsed_response))
-        
-        # Parse result
-        parsed_response = parser.invoke(response.text)
+       
         
         # Add timestamps to each item
-        parsed_response_with_timestamps = add_timestamps_to_response(parsed_response)
+        # parsed_response_with_timestamps = add_timestamps_to_response(parsed_response)
         
-        return parsed_response_with_timestamps
-
+        return parsed_response
     except Exception as e:
         return str(e)
