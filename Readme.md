@@ -110,7 +110,7 @@ Below are some of the interface images showcasing key features of the Smart Visi
 - **Quantization Tool**: Unsloth module for faster inference  
 
 ### Cloud Services: 
-- Google Cloud Bucket for model deployment  
+- Google Cloud Bucket for model deployment 
 
 
 
