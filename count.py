@@ -78,7 +78,7 @@ def process_response(raw_response):
             processed_data.append(item)
         else:
             # Add a timestamp dynamically during processing
-            item["Timestamp"] = current_date.strftime('%Y-%m-%d %H:%M:%S')
+            item["Timestamp"] = current_date_str
             # Calculate expiry details
             expiry_date = item.get("Expiry date", "NA")
             expired, remaining_days = calculate_expiry(expiry_date)
