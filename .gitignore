@@ -16,3 +16,6 @@ temp/
 
 # Static user uploads
 static/uploads/
+
+#rough files
+rough.py
