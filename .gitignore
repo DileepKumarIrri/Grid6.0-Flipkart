@@ -1,7 +1,6 @@
 __pycache__
 rough.py
 myenv
-static\uploads
-temp\temp.py
-temp\fresh2.py
+static/uploads/
+temp/
 .env
