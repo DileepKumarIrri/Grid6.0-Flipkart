@@ -1,4 +1,4 @@
-# 🤖 Smart Vision Technology 🤖
+# Smart Vision Technology 🤖
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For Instant Quality Check ✨
 
 ---
@@ -58,7 +58,7 @@ Below are some of the interface images showcasing key features of the Smart Visi
 ---
 
 ## ⚙️ **Functionality Workflow**
-![Workflow](https://github.com/user-attachments/assets/7e73c1e9-11f7-482b-bcce-f98429f6f4a8)
+![workflow](https://github.com/user-attachments/assets/ea56533a-7621-4483-8ef4-fc05d27a76c3)
 
 
 ### **Step 1: Input Stage** 📷

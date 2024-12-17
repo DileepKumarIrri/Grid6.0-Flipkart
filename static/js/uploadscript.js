@@ -40,7 +40,7 @@ function uploadImage() {
 document.querySelector('.details').addEventListener('click', function() {
     const imageElement = document.querySelector('.uploaded-image');
     if (!imageElement) {
-        alert('No image selected');
+        alert('Please Upload image To go');
         return;
     }
 
