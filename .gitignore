@@ -4,3 +4,4 @@ myenv
 static\uploads
 temp\temp.py
 temp\fresh2.py
+.env
