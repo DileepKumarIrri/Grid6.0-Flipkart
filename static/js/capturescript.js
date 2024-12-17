@@ -127,7 +127,7 @@ function displayTable(data, buttonType) {
     tableContainer.innerHTML = ''; 
     tableContainer.style.display = 'block'; 
 
-    const totalItemsHTML = `<h2 style="margin-top:20px; text-align: left; color:black"><strong>Total Items: ${data.total_items}</strong></h2>`;
+    const totalItemsHTML = `<h2><strong>Total Items: ${data.total_items}</strong></h2>`;
     console.log(totalItemsHTML)
 
     let tableHTML = '';

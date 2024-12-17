@@ -4,7 +4,66 @@
     box-sizing: border-box;
 }
 
-body {
+body{
+    display: block;
+    background-color:#065bba;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap; /* Allow flex items to wrap */
+    background-color:#065bba;
+    height:100px;
+  }
+  
+  header .logo {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Space between logo and nav on small screens */
+  }
+  
+  header .logo img {
+    display: inline-block;
+  }
+  
+  header .small-logo {
+    width: 80px; /* Smaller image size */
+    height: auto;
+  }
+  
+  header .large-logo {
+    width: 150px; /* Larger image size */
+    height: auto;
+  }
+  
+  header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 25px;
+    font-family:'Times New Roman', Times, serif;
+  }
+  
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column; /* Stack header items vertically on mobile */
+      align-items: flex-start; /* Align items to the left on smaller screens */
+    }
+  
+    header .logo {
+      margin-bottom: 10px; /* Add space below logo for mobile */
+    }
+  
+    header nav {
+      margin-top: 10px; /* Add space between logo and nav links */
+    }
+}
+
+.body {
     font-family: Arial, sans-serif;
     background-color: #065bba;
     color: #333;
@@ -25,15 +84,18 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: auto; /* Adds spacing from the top dynamically */
+    margin-top: 20px; /* Adds spacing from the top dynamically */
     margin-bottom: auto; /* Centers the container while growing */
     transition: margin 0.3s ease; /* Smooth adjustment */
 }
 
-header {
-    margin-bottom: 20px;
+.container header {
+    margin-bottom: 50px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-
 h1 {
     font-size: 5.0rem;
     color: #2b3641;
@@ -60,7 +122,7 @@ h1 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     width: 350px;
-    height: 200px;
+    height: 250px;
   }
 
   .button-container button:hover {
@@ -77,23 +139,56 @@ button {
     border-radius: 5px;
     cursor: pointer;
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
     width: 250px; /* Set the width of both buttons */
     height: 60px; /* Set a consistent height for both buttons */
 }
 
-button img {
+
+.main-icon {
     width: 150px;
     height: 150px;
-    object-fit: cover; /* Ensure the image fills the space without distortion */
-    border-radius: 70%; /* Make the image circular */
-    border: 2px solid #ccc; /* Optional: Add a border for a clean look */
+    object-fit: cover;
+    border-radius: 70%; /* Circular image */
+    border: 2px solid #ccc; /* Optional border */
+    margin-bottom: 10px; /* Spacing between image and text */
+}
+
+.grocery-items {
+    display: flex; /* Use flexbox for horizontal layout */
+    align-items: center; /* Align vertically in the center */
+    justify-content: center;
+    gap: 15px; /* Small gap between text and gif */
+    margin: 5px 0;
+}
+
+.grocery-items h3 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.5rem; /* Adjust the font size */
+    color: #333; /* Text color */
+    padding: 5px;
+}
+
+
+.upload-gif{
+    width: 80px; /* Small size for the gif */
+    height: auto;
+    object-fit: contain;
 }
 
 
 /* Media query for screens smaller than 1024px (small laptops, tablets) */
 @media (max-width: 1024px) {
+    .container header {
+        margin-bottom: 20px;
+        background-color: white;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
     button img {
         width: 120px; /* Reduce image size for smaller screens */
         height: 120px; 
@@ -106,29 +201,10 @@ button img {
         padding: 15px; /* Padding adjustment */
     }
 
+
     .image-upload-section {
         flex-direction: column; /* Stack buttons vertically */
         gap: 20px; /* Space between buttons */
-    }
-}
-
-/* Media query for mobile screens smaller than 768px */
-@media (max-width: 768px) {
-    button img {
-        width: 100px; /* Further reduce image size for mobile */
-        height: 100px; 
-        border-radius: 50%; /* Maintain circular shape */
-    }
-
-    .button-container button {
-        width: 100%; /* Full width on mobile */
-        height: auto; /* Auto height for flexible layout */
-        padding: 15px; /* Adjust padding for better button size */
-    }
-
-    .image-upload-section {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 15px; /* Space between buttons */
     }
 }
 
@@ -241,13 +317,18 @@ button:hover {
     object-fit: contain; /* Ensures the image fits without distortion */
 }
 
-#imageContainer {
-    border: 2px solid #4CAF50; /* Adds a green border */
-    padding: 10px; /* Adds some space inside the container */
-    background-color: #f9f9f9; /* Light gray background */
-    border-radius: 5px; /* Rounds the corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-    transition: all 0.3s ease; /* Adds a smooth transition effect */
+
+.image-container {
+    padding: 20px;
+    border: 2px dashed #3498db;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 #imageContainer:hover {
@@ -256,21 +337,18 @@ button:hover {
 }
 
 
-/* .image-container {
-    padding: 20px;
-    border: 2px dashed #3498db;
-    min-height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-} */
 
 #captureBtn
 {
     margin-left:150px;
     padding-left: 60px;
 }
+
+#captureBtn h3{
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
 .end-buttons{
     margin-top: 20px;
     display: flex;
@@ -318,6 +396,9 @@ button:hover {
         padding-left: 110px; /* Optional: Adjust padding if necessary */
         width: 100%; /* Make button width 100% for full width */
     }
+    #captureBtn h3{
+        margin-right: 80px;
+    }
 }
 
 /* Media query for very small screens smaller than 480px */
@@ -326,6 +407,11 @@ button:hover {
         margin-left: 0; /* Ensure no left margin for very small screens */
         width: 100%; /* Full width on very small screens */
     }
+
+    #captureBtn h3{
+        margin-right: 60px;
+    }
+
 }
 
 .details{
@@ -411,6 +497,15 @@ table tr:hover {
     padding: 10px;
 }
 
+.table-container h2{
+    margin-top:20px;
+    text-align: center;
+    color:black;
+    font-size:300%;
+    font-style: italic;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 
 .downloadbtn {
     display: flex;
@@ -485,8 +580,9 @@ table tr:hover {
     }
 
     .button-container button {
-        width: 250px; /* Smaller button sizes */
-        height: 150px;
+        width: 100%; /* Adjusts buttons to 80% width for mobile */
+        max-width: 250px; /* Ensure buttons do not grow too large */
+        height: 200px;
     }
 
     button {
@@ -497,6 +593,8 @@ table tr:hover {
     .image-upload-section {
         flex-direction: column; /* Stack buttons vertically */
         gap: 15px;
+        justify-content: center;
+        align-items: center;
     }
 
     .container {
@@ -519,6 +617,52 @@ table tr:hover {
 
     .table-container {
         overflow-x: auto; /* Enable horizontal scrolling for tables */
+    }
+
+
+    .container header {
+        margin-bottom: 10px;
+        background-color: white;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .main-icon {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 70%; /* Circular image */
+        border: 2px solid #ccc; /* Optional border */
+        margin-bottom: 5px; /* Spacing between image and text */
+    }
+
+    .grocery-items {
+        display: flex; /* Use flexbox for horizontal layout */
+        align-items: center; /* Align vertically in the center */
+        justify-content: center;
+        gap: 10px; /* Small gap between text and gif */
+        margin: 10px 0;
+    }
+    
+    .grocery-items h3 {
+        margin: 0; /* Remove default margin */
+        font-size: 0.5 rem; /* Adjust the font size */
+        color: #333; /* Text color */
+        padding: 5px;
+    }
+    
+    
+    .upload-gif{
+        width: 40px; /* Small size for the gif */
+        height: auto;
+        object-fit: contain;
+    }
+
+    .image-upload-section {
+        margin-top: 20px;
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 15px; /* Space between buttons */
     }
 }
 
