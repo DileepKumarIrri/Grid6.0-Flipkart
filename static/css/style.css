@@ -46,7 +46,8 @@ header nav a {
   color: white;
   text-decoration: none;
   margin-left: 20px;
-  font-size: 18px;
+  font-size: 26px;
+  font-family:'Times New Roman', Times, serif;
 }
 
 @media (max-width: 768px) {
