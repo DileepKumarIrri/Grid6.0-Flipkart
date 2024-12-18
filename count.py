@@ -40,10 +40,7 @@
 import requests
 import json
 import base64
-from datetime import datetime
-import pytz
-
-ist = pytz.timezone('Asia/Kolkata')
+from datetime import datetime,timedelta
 # # Generate timestamps
 # current_date = datetime.now()
 # current_date_str = current_date.strftime('%Y-%m-%d %H:%M:%S')
@@ -74,13 +71,15 @@ def get_current_timestamp():
 def process_response(raw_response):
     """Add expiry status and remaining days to the response."""
     processed_data = []
+    current_utc_time = datetime.now()
+    ist_time = current_utc_time + timedelta(hours=5, minutes=30)
     for item in raw_response:
         if "TotalItems" in item:
             # Append the total items directly
             processed_data.append(item)
         else:
             # Add a timestamp dynamically during processing
-            item["Timestamp"] = datetime.now(pytz.utc).astimezone(ist).strftime('%Y-%m-%d %H:%M:%S')
+            item["Timestamp"] = ist_time.strftime('%Y-%m-%d %H:%M:%S')
             # Calculate expiry details
             expiry_date = item.get("Expiry date", "NA")
             expired, remaining_days = calculate_expiry(expiry_date)

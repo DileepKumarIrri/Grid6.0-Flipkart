@@ -3,13 +3,12 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify
 import os
 import json
 from werkzeug.utils import secure_filename
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from dotenv import load_dotenv
 from count import count_grocery_items
 from freshness import analyze_image
-import pytz
-ist = pytz.timezone('Asia/Kolkata')
+
 # Load environment variables
 load_dotenv()
 
@@ -90,6 +89,8 @@ def upload_image():
 
             # Process the image (extract details, OCR, etc.)
             if button_type == 'freshproduce':
+                current_utc_time = datetime.now()
+                ist_time = current_utc_time + timedelta(hours=5, minutes=30)
                 try:
                     result = analyze_image(file_path)
 
@@ -104,7 +105,7 @@ def upload_image():
                                 item_details[key.strip()] = value.strip()
                             
                         if item_details:
-                            item_details["Timestamp"] = datetime.now(pytz.utc).astimezone(ist).strftime('%Y-%m-%d %H:%M:%S')
+                            item_details["Timestamp"] = ist_time.strftime('%Y-%m-%d %H:%M:%S')
                             items.append(item_details)
 
 
