@@ -336,6 +336,9 @@ button:hover {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhances the shadow on hover */
 }
 
+.image-container p {
+    font-size: 200%; /* Reduce image height on mobile */
+}
 
 
 #captureBtn
@@ -600,6 +603,10 @@ table tr:hover {
     .container {
         width: 100%;
         padding: 10px;
+    }
+
+    .image-container p {
+        font-size: 150%; /* Reduce image height on mobile */
     }
 
     .image-container img.uploaded-image {
