@@ -47,6 +47,11 @@ def home():
     return render_template('index.html')
 
 
+@app.route('/aboutus')
+def about_us():
+    """Render the about us page (aboutus.html)."""
+    return render_template('aboutus.html')
+
 @app.route('/upload')
 def upload_page():
     """Render the upload page (upload.html)."""

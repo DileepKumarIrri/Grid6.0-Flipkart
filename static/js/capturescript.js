@@ -85,7 +85,7 @@ document.getElementById('captureBtn').addEventListener('click', function() {
 document.querySelector('.details').addEventListener('click', function() {
     const imageElement = document.querySelector('.captured-image');
     if (!imageElement) {
-        alert('No image captured or uploaded');
+        alert('Capture Image to go');
         return;
     }
 
