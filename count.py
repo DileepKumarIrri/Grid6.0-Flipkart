@@ -46,19 +46,19 @@ from datetime import datetime,timedelta
 # current_date_str = current_date.strftime('%Y-%m-%d %H:%M:%S')
 
 
-def calculate_expiry(expiry_date_str):
-    """Calculate expiry status and remaining days."""
-    if expiry_date_str == "NA":
-        return "NA", "NA"
+# def calculate_expiry(expiry_date_str):
+#     """Calculate expiry status and remaining days."""
+#     if expiry_date_str == "NA":
+#         return "NA", "NA"
     
-    try:
-        expiry_date = datetime.strptime(expiry_date_str, "%d/%m/%Y")
-        remaining_days = (expiry_date - current_date).days
-        expired = "Yes" if remaining_days < 0 else "No"
-        return expired, max(0, remaining_days)
-    except ValueError:
-        # Invalid expiry date format
-        return "NA", "NA"
+#     try:
+#         expiry_date = datetime.strptime(expiry_date_str, "%d/%m/%Y")
+#         remaining_days = (expiry_date - current_date).days
+#         expired = "Yes" if remaining_days < 0 else "No"
+#         return expired, max(0, remaining_days)
+#     except ValueError:
+#         # Invalid expiry date format
+#         return "NA", "NA"
     
 def get_current_timestamp():
     """Get the current timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SS±HH:MM."""
