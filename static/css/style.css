@@ -33,12 +33,12 @@ header .logo img {
 }
 
 header .small-logo {
-  width: 5vw; /* Relative size to viewport width */
+  width: 100px; /* Smaller image size */
   height: auto;
 }
 
 header .large-logo {
-  width: 10vw; /* Relative size to viewport width */
+  width: 200px; /* Larger image size */
   height: auto;
 }
 
@@ -46,8 +46,8 @@ header nav a {
   color: white;
   text-decoration: none;
   margin-left: 20px;
-  font-size: 1.5vw; /* Relative size to viewport width */
-  font-family: 'Times New Roman', Times, serif;
+  font-size: 26px;
+  font-family:'Times New Roman', Times, serif;
 }
 
 @media (max-width: 768px) {
@@ -71,17 +71,17 @@ header nav a {
   flex-direction: row; /* Default to row layout on desktop */
   justify-content: space-between;
   align-items: center;
-  padding: 5vw; /* Use viewport width for padding */
+  padding: 50px;
 }
 
 .hero-text {
   max-width: 50%;
-  margin-left: 7vw; /* Use viewport width for margin */
+  margin-left: 70px;
 }
 
 .hero-text h1 {
-  font-size: 3vw; /* Use relative size */
-  margin-bottom: 2vw; /* Use relative size */
+  font-size: 50px;
+  margin-bottom: 20px;
 }
 
 .hero-text h1 span {
@@ -89,7 +89,7 @@ header nav a {
 }
 
 .hero-text p {
-  font-size: 2.5vw; /* Use relative size */
+  font-size: 30px;
   color: #ccc;
 }
 
@@ -98,47 +98,11 @@ header nav a {
   flex-direction: column; /* Ensure buttons are always stacked vertically */
   justify-content: center;
   align-items: center;
-  width: 15vw; /* Relative to viewport width */
-  height: 15vw; /* Relative to viewport width */
-  gap: 3vw; /* Relative size for gap */
-  margin-top: 5vw; /* Relative size for margin */
-  margin-right: 1vw; /* Relative size for margin */
-}
-
-.button-container button {
-  display: block;
-  padding: 0vw; /* Relative padding */
-  background: white;
-  color: #121212;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.5s ease;
-  width: 20vw; /* Relative width */
-  height: 10vw; /* Relative height */
-}
-
-.button-container button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.button-container .icon {
-  font-size: 2.4rem; /* Relative size */
-  margin-right: 1.0vw; /* Relative margin */
-  color: #065bba;
-}
-
-.button-container span {
-  font-size: 1.6rem; /* Relative size */
-  font-weight: bold;
-}
-
-.button-container span small {
-  display: block;
-  font-size: 1.2rem; /* Relative size */
-  color: #777;
+  width: 400px;
+  height: 400px;
+  gap: 50px;
+  margin-top: 100px;
+  margin-right: 100px;
 }
 
 @media (max-width: 768px) {
@@ -152,23 +116,16 @@ header nav a {
   }
 
   header .small-logo {
-    width: 20vw; /* Reduce size for smaller screens */
+    width: 70px; /* Reduce size for smaller screens */
   }
 
   header .large-logo {
-    width: 30vw; /* Adjust the logo size for smaller screens */
+    width: 150px; /* Adjust the logo size for smaller screens */
   }
 
   header nav {
-    margin-top: 5vw; /* Remove extra space on smaller screens */
+    margin-top: 0; /* Remove extra space on smaller screens */
   } 
-
-  header nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 3.5vw;
-    } 
 
   .hero {
     flex-direction: column; /* Stack the hero content vertically on smaller screens */
@@ -181,34 +138,51 @@ header nav a {
     text-align: center; /* Center the text on mobile */
   }
 
-  .hero-text h1 {
-      font-size: 10vw; /* Use relative size */
-      margin-bottom: 2vw; /* Use relative size */
-    }
-    
-    .hero-text h1 span {
-      color: #ffd700;
-    }
-    
-    .hero-text p {
-      font-size: 7vw; /* Use relative size */
-      color: #ccc;
-    }
-
   .hero-buttons {
-    width: 90%; /* Full width for buttons */
-    margin-top: 20vw; /* Relative size */
+    width: 100%; /* Full width for buttons */
+    margin-top: 50px;
     margin-right: 0;
-    width: 80vw;
-    height: 40vh;
-    gap: 5vw; /* Relative size */
+    gap: 20px;
   }
 
   .button-container button {
-      width: 80vw !important; /* Full width on mobile */
-      height: 25vh !important; /* Increase height on mobile */
-      padding: 30vw 0; /* Add vertical padding to increase button size */
+    width: 90%; /* Button takes up 90% of container width on mobile */
+    margin: 10px 0; /* Add spacing between buttons */
   }
 }
 
+.button-container button {
+  display: block;
+  padding: 20px;
+  background: white;
+  color: #121212;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.5s ease;
+  width: 350px; /* Default width for desktop */
+  height: 200px;
+}
 
+.button-container button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button-container .icon {
+  font-size: 24px;
+  margin-right: 15px;
+  color: #065bba;
+}
+
+.button-container span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.button-container span small {
+  display: block;
+  font-size: 12px;
+  color: #777;
+}
