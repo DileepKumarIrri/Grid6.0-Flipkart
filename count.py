@@ -42,9 +42,9 @@ import json
 import base64
 from datetime import datetime
 
-# Generate timestamps
-current_date = datetime.now()
-current_date_str = current_date.strftime('%Y-%m-%d %H:%M:%S')
+# # Generate timestamps
+# current_date = datetime.now()
+# current_date_str = current_date.strftime('%Y-%m-%d %H:%M:%S')
 
 
 def calculate_expiry(expiry_date_str):
@@ -78,7 +78,7 @@ def process_response(raw_response):
             processed_data.append(item)
         else:
             # Add a timestamp dynamically during processing
-            item["Timestamp"] = current_date_str
+            item["Timestamp"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             # Calculate expiry details
             expiry_date = item.get("Expiry date", "NA")
             expired, remaining_days = calculate_expiry(expiry_date)
