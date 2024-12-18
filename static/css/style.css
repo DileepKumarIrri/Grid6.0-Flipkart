@@ -105,6 +105,42 @@ header nav a {
   margin-right: 1vw; /* Relative size for margin */
 }
 
+.button-container button {
+  display: block;
+  padding: 0vw; /* Relative padding */
+  background: white;
+  color: #121212;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.5s ease;
+  width: 20vw; /* Relative width */
+  height: 10vw; /* Relative height */
+}
+
+.button-container button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button-container .icon {
+  font-size: 2.4rem; /* Relative size */
+  margin-right: 1.0vw; /* Relative margin */
+  color: #065bba;
+}
+
+.button-container span {
+  font-size: 1.6rem; /* Relative size */
+  font-weight: bold;
+}
+
+.button-container span small {
+  display: block;
+  font-size: 1.2rem; /* Relative size */
+  color: #777;
+}
+
 @media (max-width: 768px) {
   header {
     flex-direction: row; /* Ensure header remains in a row on mobile */
@@ -175,38 +211,4 @@ header nav a {
   }
 }
 
-.button-container button {
-  display: block;
-  padding: 0vw; /* Relative padding */
-  background: white;
-  color: #121212;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.5s ease;
-  width: 20vw; /* Relative width */
-  height: 10vw; /* Relative height */
-}
 
-.button-container button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.button-container .icon {
-  font-size: 2.4vw; /* Relative size */
-  margin-right: 1.0vw; /* Relative margin */
-  color: #065bba;
-}
-
-.button-container span {
-  font-size: 1.6vw; /* Relative size */
-  font-weight: bold;
-}
-
-.button-container span small {
-  display: block;
-  font-size: 1.2vw; /* Relative size */
-  color: #777;
-}
