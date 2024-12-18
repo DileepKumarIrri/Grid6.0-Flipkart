@@ -8,8 +8,8 @@ from datetime import datetime
 from dotenv import load_dotenv
 from count import count_grocery_items
 from freshness import analyze_image
-current_date_str= datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-
+import pytz
+ist = pytz.timezone('Asia/Kolkata')
 # Load environment variables
 load_dotenv()
 
@@ -104,7 +104,7 @@ def upload_image():
                                 item_details[key.strip()] = value.strip()
                             
                         if item_details:
-                            item_details["Timestamp"] = current_date_str
+                            item_details["Timestamp"] = datetime.now(pytz.utc).astimezone(ist).strftime('%Y-%m-%d %H:%M:%S')
                             items.append(item_details)
 
 
