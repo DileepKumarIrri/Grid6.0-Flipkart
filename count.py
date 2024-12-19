@@ -2,41 +2,12 @@
 # ##########################################################################################
 #<--------------------------------------Server-Client Model-------------------->>>
 
-# puburl= "https://ab10-34-16-179-34.ngrok-free.app"
+puburl= "https://ab10-34-16-179-34.ngrok-free.app"
 
-# import requests
+import requests
 
-# # URL of the endpoint
-# url = puburl+'/webhook1'
-
-# def count_grocery_items(image_path,api):
-
-# # Send the POST request
-#     try:
-#         with open(image_path, 'rb') as file:
-#             response = requests.post(url, files={'file': file})
-#             print(response)
-
-#         # print("Respo  nse Text:", response.text)
-
-#         # Attempt to parse JSON if the response is successful
-#         if response.status_code == 200:
-#             # print("Response JSON:", response.json())
-#             response_json = response.json()
-#             return response_json
-#         else:
-#             print("Non-JSON Response or Error")
-#     except Exception as e:
-#         print("An error occurred:", str(e))
-
-# image_path=r"C:\Users\darkn\Desktop\images4.jpg"
-# print(count_grocery_items(image_path,"api"))
-
-#<----------------------------------API CALL----------------------------------------->>
-
-
-
-
+# URL of the endpoint
+url = puburl+'/webhook1'
 import requests
 import json
 import base64
@@ -90,81 +61,28 @@ def process_response(raw_response):
             processed_data.append(item)
     return processed_data
 
+def count_grocery_items(image_path,api):
 
-def count_grocery_items(image_path, api_key):
-    def encode_image(image_path):
-        with open(image_path, "rb") as image_file:
-            return base64.b64encode(image_file.read()).decode('utf-8')
+# Send the POST request
+    try:
+        with open(image_path, 'rb') as file:
+            response = requests.post(url, files={'file': file})
+            print(response)
 
-    image_base64 = encode_image(image_path)
+        # print("Respo  nse Text:", response.text)
 
-    # Prompt for the model
-    prompt = f"""Task: Detect, identify, and count all distinct grocery items present in the given image.
-    Instructions:
-    Count all items: Identify and count every visible grocery item in the image, ensuring the total count is as high as possible, even if item names or expiry dates cannot be identified.
-    Detect brand names: Recognize and list the brand names of items, if possible. If multiple items of the same brand are present, provide the count for that brand.
-    Detect expiry dates: For each brand, attempt to recognize the expiry date of the items as dd/mm/yyyy, if visible. If no expiry date can be identified, mark it as "NA".
-    Important Rules for the Output:
-    strictly DO NOT include any extra text, explanations, or comments other than the output format.
-    If expiry date is "NA", then "Expired" and "Expected life span (Days)" should be "NA". 
-    Output format: json
-    [
-      {{
-        "TotalItems":{{total_no_of_items}}
-      }},
-      {{
-        "Sl no": {{serial_number}},
-        "Brand": "{{brand_name}}",
-        "Expiry date": "{{expiry_date or NA}}",
-        "Count": {{count}}
-      }}
-    ]"""
+        # Attempt to parse JSON if the response is successful
+        if response.status_code == 200:
+            # print("Response JSON:", response.json())
+            response_json = response.json()
+            return response_json
+        else:
+            print("Non-JSON Response or Error")
+    except Exception as e:
+        print("An error occurred:", str(e))
 
-    url = "https://api.fireworks.ai/inference/v1/chat/completions"
-    payload = {
-        "model": "accounts/fireworks/models/llama-v3p2-90b-vision-instruct",
-        "max_tokens": 4096,
-        "top_p": 1,
-        "top_k": 40,
-        "presence_penalty": 0,
-        "frequency_penalty": 0,
-        "temperature": 0.6,
-        "messages": [
-            {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "image_url",
-                        "image_url": {
-                            "url": f"data:image/jpeg;base64,{image_base64}"
-                        }
-                    },
-                    {
-                        "type": "text",
-                        "text": prompt
-                    }
-                ]
-            }
-        ]
-    }
-    headers = {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {api_key}"
-    }
+image_path=r"C:\Users\darkn\Desktop\images4.jpg"
+print(count_grocery_items(image_path,"api"))
 
-    response = requests.request("POST", url, headers=headers, data=json.dumps(payload))
-    print(response)
-
-    raw_response = response.json()['choices'][0]['message']['content']
-
-    # Convert raw response to Python object
-    raw_data = json.loads(raw_response)
-
-    # Process the raw data to calculate expiry and add timestamps
-    processed_data = process_response(raw_data)
-
-    # Return the updated JSON
-    return json.dumps(processed_data, indent=2)
-
+#<----------------------------------API CALL----------------------------------------->>
 
