@@ -34,8 +34,10 @@ Smart Vision Technology is an innovative solution designed to automate the quali
    - Users can upload images from their desktops or use live streaming for real-time analysis.
 
 5. 📂 **Downloadable Reports**
-   - Users can download detailed analysis reports of grocery and fresh produce items in **CSV** file.
+   - Users can download detailed reports of grocery and fresh produce items in **CSV** file.
 
+6. 📂 **Data Analysis**
+   - Our application features dynamic and interactive visualizations, designed to provide users with a clear and engaging way to explore data insights. This unique capability ensures an intuitive and visually appealing experience for users.
 ---
 
 ## 📷 **Web Application**
@@ -43,22 +45,28 @@ Smart Vision Technology is an innovative solution designed to automate the quali
 Below are some of the interface images showcasing key features of the Smart Vision Technology.
 
 ### 🏠 **Home Page**
-![Home_page](https://github.com/user-attachments/assets/d281d6b4-fd38-4c54-a985-9939ff30c3ca)
+![Home Page](https://github.com/user-attachments/assets/6b1ed6c7-5470-414e-a87e-927f6e767824)
 
 
-### 📤 **Image Upload Page**
-![upload](https://github.com/user-attachments/assets/4fcea787-6ecc-47f1-b6db-f4c28170c2aa)
+### 📤 **Upload Page**
+![upload](https://github.com/user-attachments/assets/1c63dd09-6b0f-4cdd-b073-315baa6847c0)
 
 ### 📷 **Capture Page**
-![Livefeed](https://github.com/user-attachments/assets/d6bfff69-4cfc-4f23-94ac-20b2cfa3924f)
+![capture](https://github.com/user-attachments/assets/43ab26c9-6b30-4653-81de-91a024607c50)
 
 ### 📄 **Report Download**
-![report](https://github.com/user-attachments/assets/c57064fb-8fe3-4064-b721-67bf19ddd1dd)
+![Result](https://github.com/user-attachments/assets/eafff043-cabd-4503-b429-d7fd52fa47df)
+
+### 📄 **Data Analysis**
+![Data Analysis](https://github.com/user-attachments/assets/fd3e8633-32cf-4892-b64b-2cff19f8d9fe)
 
 ---
 
 ## ⚙️ **Functionality Workflow**
 ![workflow](https://github.com/user-attachments/assets/ea56533a-7621-4483-8ef4-fc05d27a76c3)
+
+## ⚙️ **Backend Workflow**
+![backendarchitecture](https://github.com/user-attachments/assets/ffcec30f-b223-4a76-b095-a3c0c255164c)
 
 
 ### **Step 1: Input Stage** 📷
@@ -146,6 +154,7 @@ Smart Vision/
 │   ├── live-feed.html        
 │   └── upload.html            
 │
+├── models/
 |
 ├── .gitignore        
 ├── app.py                      # Main application script
