@@ -1,19 +1,22 @@
-# Smart Vision Technology 🤖
-## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For Instant Quality Check ✨
+# Smart Vision Technology 🤖  
+## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For Instant Quality Check ✨  
 
 ---
 
+# 🔍 Try out  
+## 💥🚀 [![Click Here](https://media.gifdb.com/click-here-rough-state-out-now-trsa58rs3ndj63ov.gif)](https://flipvision.tech/) 💥🚀  
+*Click the link and witness the power of Smart Vision Technology in action!*  
+
+---
+
+---
 ## 📚 **Application Overview**
 
 Smart Vision Technology is an innovative solution designed to automate the quality check process for grocery items and fresh produce. Leveraging advanced machine learning technologies, it provides real-time insights into the quality, freshness, and other essential attributes of the items. This application offers a seamless, user-friendly experience through an interactive web interface, enabling users to analyze grocery items through live streaming or image uploads in both Mobile and Desktop.
 
 ---
 
-## 🔍 Try out
 
- *Coming Soon*
-
----
 
 ## 📊 **Key Features** 
 
