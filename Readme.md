@@ -63,16 +63,19 @@ Below are some of the interface images showcasing key features of the Smart Visi
 ### 📄 **Report Download**
 ![Result](https://github.com/user-attachments/assets/eafff043-cabd-4503-b429-d7fd52fa47df)
 
-### 📄 **Data Analysis**
+### 📄 **Realtime Data Analysis through PowerBI**
 ![Data Analysis](https://github.com/user-attachments/assets/fd3e8633-32cf-4892-b64b-2cff19f8d9fe)
 
 ---
 
 ## ⚙️ **Functionality Workflow**
-![workflow](https://github.com/user-attachments/assets/ea56533a-7621-4483-8ef4-fc05d27a76c3)
+![systemarchitecture](https://github.com/user-attachments/assets/9eb2e7b6-29fa-4d1c-a379-09cb509f23eb)
 
 ## ⚙️ **Backend Workflow**
-![backendarchitecture](https://github.com/user-attachments/assets/ffcec30f-b223-4a76-b095-a3c0c255164c)
+![backendarchitecture](https://github.com/user-attachments/assets/ef440907-e4d4-4a15-8d22-7618a21602a1)
+
+## ⚙️ **Database architecture**
+![Database architecture](https://github.com/user-attachments/assets/636786aa-15a0-412b-a2bb-72e7a6053f9b)
 
 
 ### **Step 1: Input Stage** 📷
@@ -99,6 +102,8 @@ Below are some of the interface images showcasing key features of the Smart Visi
 - Users can download the item details in multiple formats, including:
   - 📂 **CSV**
 
+### **Step 4: Realtime Data Analysis through PowerBI** 💾💾💾
+- Users can explore and analyze data insights through interactive visualizations powered by Power BI, seamlessly connected to a relational database.
 ---
 <!-- 
 ## 🛠️ **System Design** 
