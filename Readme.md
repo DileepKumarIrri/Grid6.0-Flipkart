@@ -4,7 +4,7 @@
 ---
 
 # 🔍 Try out  
-## 💥🚀 [![Click Here](https://media.gifdb.com/click-here-rough-state-out-now-trsa58rs3ndj63ov.gif)](https://flipvision.tech/) 💥🚀  
+## 💥🚀 [![Click Here](static/images/click.gif)](https://flipvision.tech/) 💥🚀  
 *Click the link and witness the power of Smart Vision Technology in action!*  
 
 ---
