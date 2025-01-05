@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Vision Technology</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logos">
+            <div class="logo1"><img src="static/assets/flipkart.svg" alt="flipkart"></div>
+            <div class="logo2"><img src="static/assets/grid.png" alt="Grid 6.0"></div>
+        </div>
+        <nav>
+            <div class="menu-toggle" id="menuToggle">
+                &#9776; <!-- Hamburger icon -->
+            </div>
+            <ul id="menu" class="menu">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('architectures') }}">Architecture</a></li>
+                <!-- <li><a href="#">Models</a></li> -->
+                <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+      <div class="buttons">
+          <button class="button-2" id="systemarchitecture" style="height:60px;">
+              System Architecture
+          </button>
+          <button class="button-2" id="backendarchitecture" style="height:60px;">
+              Backend Architecture
+          </button>
+          <button class="button-2" id="databasearchitecture" style="height:60px;">
+              Database Architecture
+          </button>
+      </div>  
+      <div class="container" style="margin-top: 0px; padding:10px;">
+            <div class="system">
+                <img src="static/assets/systemarchitecture.png" alt="System Architecture" >
+            </div>
+
+            <div class="backend" style="display: none;">
+                <img src="static/assets/backendarchitecture.png" alt="Backend Architecture" >
+            </div>
+
+            <div class="database" style="display: none;">
+                <img src="static/assets/Databasearchitecture.JPG" alt="Database Architecture" >
+            </div>
+        </div>
+
+        
+    <script>
+        const systemarchitecture = document.getElementById('systemarchitecture');
+        const backendarchitecture = document.getElementById('backendarchitecture');
+        const databasearchitecture = document.getElementById('databasearchitecture');
+
+        systemarchitecture.style.backgroundColor = '#0552FF';
+        systemarchitecture.style.color = '#fff';
+
+        document.getElementById('systemarchitecture').addEventListener('click', function () {
+            document.querySelector('.system').style.display = 'block';
+            document.querySelector('.backend').style.display = 'none';
+            document.querySelector('.database').style.display = 'none';
+            systemarchitecture.style.backgroundColor = '#0552FF';
+            systemarchitecture.style.color = '#fff';
+            backendarchitecture.style.backgroundColor = '#AED9FF';
+            backendarchitecture.style.color = '#000';
+            databasearchitecture.style.backgroundColor = '#AED9FF';
+            databasearchitecture.style.color = '#000';
+        });
+
+        document.getElementById('backendarchitecture').addEventListener('click', function () {
+            document.querySelector('.system').style.display = 'none';
+            document.querySelector('.backend').style.display = 'block';
+            document.querySelector('.database').style.display = 'none';
+            backendarchitecture.style.backgroundColor = '#0552FF';
+            backendarchitecture.style.color = '#fff';
+            systemarchitecture.style.backgroundColor = '#AED9FF';
+            systemarchitecture.style.color = '#000';
+            databasearchitecture.style.backgroundColor = '#AED9FF';
+            databasearchitecture.style.color = '#000';
+        });
+
+        document.getElementById('databasearchitecture').addEventListener('click', function () {
+            document.querySelector('.system').style.display = 'none';
+            document.querySelector('.backend').style.display = 'none';
+            document.querySelector('.database').style.display = 'block';
+            databasearchitecture.style.backgroundColor = '#0552FF';
+            databasearchitecture.style.color = '#fff';
+            systemarchitecture.style.backgroundColor = '#AED9FF';   
+            systemarchitecture.style.color = '#000';
+            backendarchitecture.style.backgroundColor = '#AED9FF';
+            backendarchitecture.style.color = '#000';
+        });
+
+        // document.getElementById('data_anaylysis').addEventListener('click', function () {
+        //     window.location.href = "/dataanalysis";
+        // });
+    </script>
+</body>
+</html>

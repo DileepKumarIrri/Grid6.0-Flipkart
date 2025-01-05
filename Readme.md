@@ -78,7 +78,7 @@ Below are some of the interface images showcasing key features of the Smart Visi
 ![systemarchitecture](https://github.com/user-attachments/assets/9eb2e7b6-29fa-4d1c-a379-09cb509f23eb)
 
 ## ⚙️ **Backend Workflow**
-![backendarchitecture](https://github.com/user-attachments/assets/ef440907-e4d4-4a15-8d22-7618a21602a1)
+![backendarchitecture](https://github.com/user-attachments/assets/30ce54c2-5f1b-462a-abe2-85f3ad6dac21)
 
 ## ⚙️ **Database architecture**
 ![Database architecture](https://github.com/user-attachments/assets/636786aa-15a0-412b-a2bb-72e7a6053f9b)

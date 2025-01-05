@@ -3,39 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="static/css/style1.css">
+    <title>Smart Vision Technology</title>
+    <link rel="stylesheet" href="static/css/aboutusstyle.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="static/images/flipkart.png" alt="Flipkart Logo"  class="small-logo">
-            <img src="static/images/grid.png" alt="Grid 6.0 Logo" class="large-logo">
+        <div class="logos">
+            <div class="logo1"><img src="static/assets/flipkart.svg" alt="flipkart"></div>
+            <div class="logo2"><img src="static/assets/grid.png" alt="Grid 6.0"></div>
         </div>
         <nav>
-          <a href="{{ url_for('home') }}">Home</a>
+            <div class="menu-toggle" id="menuToggle">
+                &#9776; 
+            </div>
+            <ul id="menu" class="menu">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('architectures') }}">Architecture</a></li>
+                <!-- <li><a href="#">Models</a></li> -->
+                <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            </ul>
         </nav>
     </header>
-    <div class="title">
-        <h1 class="team-name">Tech Hunters</h1> <!-- Change the team name as needed -->
-    <div>
+ 
+    <div class="teamname">
+        <h1>Team Name: Tech Hunters</h1>
+    </div>
 
-    <main>
-        <section class="member">
-            <h2>Irri Dileep Kumar</h2>
-            <p><strong>Branch:</strong> CSE (AI & ML)</p>
-            <p><strong>Email:</strong> <a href="mailto:dileepkumarirri0@gmail.com">dileepkumarirri0@gmail.com</a></p>
-        </section>
+    <div class="team">
+        <div class="member">
+            <div><img src="static/assets/dileep.jpg" alt="Irri Dileep Kumar"></div>
+                <div class="info">
+                    <h2>Irri Dileep Kumar</h2>
+                    <p><strong>Branch:</strong> CSE (AI & ML)</p>
+                    <p><strong>Email:</strong> dileepkumarirri0@gmail.com</p>
+                </div>
+        </div>
+        <div class="member">
+            <div><img src="static/assets/profileimg.jpeg" alt="Tarun Yegireddi"></div>
+                <div class="info">
+                    <h2>Tarun Yegireddi</h2>
+                    <p><strong>Branch:</strong> CSE (AI & ML)</p>
+                    <p><strong>Email:</strong> yegireditarunsai@gmail.com</p>
+                </div>
+        </div>
+    </div>
+        
 
-        <section class="member">
-            <h2>Tarun Yegireddi</h2>
-            <p><strong>Branch:</strong> CSE (AI & ML)</p>
-            <p><strong>Email:</strong> <a href="mailto:yegiredditarunsai@gmail.com">yegiredditarunsai@gmail.com</a></p>
-        </section>
-
-        <footer>
-            <p class="college">College: Gayatri Vidya Parishad College of Engineering Visakhapatnam.</p>
-        </footer>
-    </main>
 </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Hunters Team</title>
+    <link rel="stylesheet" href="static/css/aboutusstyle.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>TECH HUNTERS</h1>
+        </header>
+        <div class="team">
+            <div class="member">
+                <img src="member1.jpg" alt="Irri Dileep Kumar">
+                <div class="info">
+                    <h2>Irri Dileep Kumar</h2>
+                    <p><strong>Branch:</strong> CSE (AI & ML)</p>
+                    <p><strong>Email:</strong> dileepkumarirri0@gmail.com</p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="member2.jpg" alt="Tarun Yegireddi">
+                <div class="info">
+                    <h2>Tarun Yegireddi</h2>
+                    <p><strong>Branch:</strong> CSE (AI & ML)</p>
+                    <p><strong>Email:</strong> yegireditarunsai@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->
