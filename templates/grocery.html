@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Vision Technology</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logos">
+            <div class="logo1"><img src="static/assets/flipkart.svg" alt="flipkart"></div>
+            <div class="logo2"><img src="static/assets/grid.png" alt="Grid 6.0"></div>
+        </div>
+        <nav>
+            <div class="menu-toggle" id="menuToggle">
+                &#9776; <!-- Hamburger icon -->
+            </div>
+            <ul id="menu" class="menu">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('architectures') }}">Architecture</a></li>
+                <!-- <li><a href="#">Models</a></li> -->
+                <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="buttons">
+        <button class="button-2" id="grocery">
+            <img src="static/assets/grocerylogo.png" alt="Grocery Icon" class="button-icon">Grocery Detection
+        </button>
+        <button class="button-2" id="freshness">
+            <img src="static/assets/freshnesslogo.png" alt="Freshness Icon" class="button-icon">Freshness Detection
+        </button>
+        <!-- <button class="button-2" id="inspection">
+            <img src="static/assets/packaging.png" alt="Data Icon" class="button-icon">Packaging Inspection
+        </button><button class="button-2" id="bin_monitoring">
+            <img src="static/assets/bin.png" alt="Data Icon" class="button-icon">Bin Monitoring
+        </button> -->
+        <button class="button-2" id="data_anaylysis">
+            <img src="static/assets/analysislogo.png" alt="Data Icon" class="button-icon">Data Analysis
+        </button>
+    </div>   
+
+    <div class="details">
+      <div class="input-section">
+        <div class="container-mt-4">
+            <div class="custom-radio-container">
+                <div class="custom-radio-buttons">
+                <!-- Upload Image -->
+                <label class="custom-radio">
+                    <input type="radio" id="uploadImage" name="option" checked>
+                    <span>Upload Image</span>
+                </label>
+
+                <!-- Live Capture -->
+                <label class="custom-radio">
+                    <input type="radio" id="liveCapture" name="option" >
+                    <span>Live Capture</span>
+                </label>
+                </div>
+            </div>
+        </div>
+        <div class="upload-section">
+            <div class="upload">
+                <div class="image-container" id="imageContainer" style="height: 310px;">
+                    <div><img src="static/assets/upload.svg" alt="Upload Image"></div>
+                    <div><p>Upload Image</p></div>
+                </div>
+                
+                <div class="upload-actions pt-3">
+                    <button id="uploadbutton">Upload</button>
+                    <button style="background: #D7E3FF; color: #0E348A;" id="get-det-button">Get Details</button>
+                </div>
+            </div>
+            <div class="capture" style="display: none;">
+                <div class="camera-selection">
+                    <select id="captureOptions" class="dropdown">
+                        <option value="" disabled selected>Select Camera</option>
+                    </select>
+                </div>
+
+                <div class="image-container" style="margin-left: 40px; height: 290px;" id="captureContainer">
+                    <div style="height:150px; width:150px;">
+                    <img src="static/assets/capture.svg" alt="capture Image" style="width: 100%; height: 100%;">
+                    </div>
+                    <div style="margin-top: 20px;"><p>Capture Image</p></div>
+                    <canvas id="capturedCanvas" style="display: none;"></canvas>
+                </div>
+
+                
+
+                <div class="capture-actions">
+                    <button style="margin:20px 0px 0px 30px" id="capturebutton">Capture-Image</button>
+                    <button id="retakebutton" style="background-color: white; border: 2px solid #0552FF; color: black; margin:50px 0px 0px 40px">Retake</button>
+                    <button id="get-cap-det-button" style="background: #D7E3FF; color: #0E348A; margin:20px 0px 0px 40px;">Get Details</button>
+                </div>
+            </div>
+        </div>
+      </div>
+          
+
+          <div class="result-container">
+            <div class="download" >
+                <button id="download-btn" style="display: none;">Download</button>
+            </div>
+              <div class="result">
+                  <div id="tableContainer"><p>Results will be displayed here...</p></div>
+                  <div id="loader" class="loader hidden">
+                    <img src="static/assets/animation.gif" alt="Loading...">
+                    <br><h5>Processing, please wait...</h5>
+                </div>
+              </div>
+          </div>
+    </div>
+    <script src="static/js/groceryscript.js"></script>
+</body>
+</html>

@@ -1,188 +1,316 @@
-/* Global reset and base styles */
+/* Global reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  background: linear-gradient(to right, #065bba 15%, #121212 70%);
-  color: white;
-  line-height: 1.6;
+    background-color: #f9f9f9;
 }
 
-/* Header Styles */
+/* Header */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  flex-wrap: wrap; /* Allow flex items to wrap */
-}
-
-header .logo {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px; /* Space between logo and nav on small screens */
-}
-
-header .logo img {
-  display: inline-block;
-}
-
-header .small-logo {
-  width: 100px; /* Smaller image size */
-  height: auto;
-}
-
-header .large-logo {
-  width: 200px; /* Larger image size */
-  height: auto;
-}
-
-header nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 26px;
-  font-family:'Times New Roman', Times, serif;
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column; /* Stack header items vertically on mobile */
-    align-items: flex-start; /* Align items to the left on smaller screens */
-  }
-
-  header .logo {
-    margin-bottom: 10px; /* Add space below logo for mobile */
-  }
-
-  header nav {
-    margin-top: 10px; /* Add space between logo and nav links */
-  }
-}
-
-/* Hero Section Styles */
-.hero {
-  display: flex;
-  flex-direction: row; /* Default to row layout on desktop */
-  justify-content: space-between;
-  align-items: center;
-  padding: 50px;
-}
-
-.hero-text {
-  max-width: 50%;
-  margin-left: 70px;
-}
-
-.hero-text h1 {
-  font-size: 50px;
-  margin-bottom: 20px;
-}
-
-.hero-text h1 span {
-  color: #ffd700;
-}
-
-.hero-text p {
-  font-size: 30px;
-  color: #ccc;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-direction: column; /* Ensure buttons are always stacked vertically */
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-  height: 400px;
-  gap: 50px;
-  margin-top: 100px;
-  margin-right: 100px;
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: row; /* Ensure header remains in a row on mobile */
+    display: flex;
     justify-content: space-between;
-  }
-
-  header .logo {
-    margin-bottom: 0; /* Ensure logo doesn’t push elements down */
-  }
-
-  header .small-logo {
-    width: 70px; /* Reduce size for smaller screens */
-  }
-
-  header .large-logo {
-    width: 150px; /* Adjust the logo size for smaller screens */
-  }
-
-  header nav {
-    margin-top: 0; /* Remove extra space on smaller screens */
-  } 
-
-  .hero {
-    flex-direction: column; /* Stack the hero content vertically on smaller screens */
-    align-items: center; /* Center items vertically */
-  }
-
-  .hero-text {
-    max-width: 100%; /* Allow text to take full width */
-    margin-left: 0; /* Remove left margin for smaller screens */
-    text-align: center; /* Center the text on mobile */
-  }
-
-  .hero-buttons {
-    width: 100%; /* Full width for buttons */
-    margin-top: 50px;
-    margin-right: 0;
-    gap: 20px;
-  }
-
-  .button-container button {
-    width: 90%; /* Button takes up 90% of container width on mobile */
-    margin: 10px 0; /* Add spacing between buttons */
-  }
+    align-items: center;
+    padding: 10px 40px 0px 10px;
+    background-color: #0552FF;
+    border-bottom: 1px solid #ddd;
 }
 
-.button-container button {
-  display: block;
-  padding: 20px;
-  background: white;
-  color: #121212;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.5s ease;
-  width: 350px; /* Default width for desktop */
-  height: 200px;
+header .logos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.button-container button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.logo1 img{
+    height: 50px;
+
 }
 
-.button-container .icon {
-  font-size: 24px;
-  margin-right: 15px;
-  color: #065bba;
+header .logo2 img{
+    height: 35px;
 }
 
-.button-container span {
-  font-size: 16px;
-  font-weight: bold;
+
+nav ul {
+    display: flex;
+    list-style: none;
 }
 
-.button-container span small {
-  display: block;
-  font-size: 12px;
-  color: #777;
+nav ul li {
+    margin: 0 15px;
 }
+
+nav ul li a {
+    text-decoration: none;
+    color:white;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #ffc400;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        border-top: 1px solid #ddd;
+        padding: 10px; /* Add padding for spacing */
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin-bottom: 15px; /* Space between items */
+    }
+
+    nav ul li a {
+        font-size: 18px; /* Increased font size */
+        font-weight: bold; /* Bold text */
+        color: #333; /* Dark text */
+    }
+
+    nav ul li a:hover {
+        color: #007bff;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    /* Adjust container for mobile view */
+    .container {
+        margin-top: 20px; /* Add space below header */
+        padding: 90px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+}
+
+/* Desktop-specific styles */
+@media (min-width: 769px) {
+    nav ul {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .container {
+        margin-top: 40px; /* More space for larger screens */
+        padding: 30px;
+    }
+}
+
+
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    padding: 10px 10px;
+    border-radius: 14px;
+    border:  2px solid rgba(26, 61, 125, 0.13);
+    font-size: 16px;
+    margin: 0 30px;
+    width:250px;
+    flex-shrink: 0;
+    cursor: pointer;
+    background-color: #AED9FF;
+    color: #000;
+    justify-content: center;
+}
+
+.buttons button.active {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.buttons button:hover {
+    border-color: #007bff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.975);
+}
+
+
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: 2px solid #1A3D7D21; /* Default darker border color */
+    border-color: #9cc9fa; /* Default green background */
+    color: rgb(255, 255, 255); /* Default text color */
+    cursor: pointer;
+    position: relative;
+    border-radius: 5px; /* Small border-radius */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+button.active {
+    background-color: #b8c6d4; /* Blue background when active */
+    color: white; /* White text when active */
+    /* Blue border when active */
+}
+
+button:hover {
+    border-color: #007bff; /* Darker green on hover */
+}
+
+.button-icon {
+    width: 50px; /* Set width of the icon to 60px */
+    height: 40px; /* Set height of the icon to 60px */
+    margin-right: 15px; /* Space between image and text */
+}
+
+button img {
+    vertical-align: middle; /* Aligns image and text vertically */
+}
+
+.button-2 {
+    background-color: grey;
+    border: solid;
+    border-color: blue;
+    border-width: 4px;
+    border-radius: 12px;
+}
+
+
+
+
+
+.container {
+    margin-top: 40px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    font-size: 200%;
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 70px;
+    height:350px;
+    margin-top: 40px;
+    /* border: 2px solid black; */
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding: 10px;
+    width: 300px;
+    height: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid #0552FF;
+    /* border: 4px solid #BBD0FF; */
+    margin-left: 20px;
+    transform-origin: center;
+    perspective: 1000px; /* Adds a 3D perspective */
+}
+
+.card:hover{
+    transform: scale(1.03); /* Scales the card to 110% of its size */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.card-body p{
+    font-size: 16px;
+    color: #000;
+}
+
+.card-body ul{
+    margin-top: 10px;
+    margin-left: 30px;
+    line-height:180%;
+    font-size: 15px;
+    color: #000;
+}
+
+.main-icon {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 70%; /* Circular image */
+    border: 3px solid #0552FF; /* Optional border */
+    margin-bottom: 10px; /* Spacing between image and text */
+}
+
+.container img{
+    width: 900px;
+    height: 480px;
+    object-fit: contain;
+}
+
+.system{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backend{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.database{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

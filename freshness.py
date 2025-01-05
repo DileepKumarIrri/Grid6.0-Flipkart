@@ -22,7 +22,7 @@ def process_response(raw_response):
             ist_time = current_utc_time + timedelta(hours=5, minutes=30)
             item["Timestamp"] = ist_time.strftime('%Y-%m-%d %H:%M:%S')
     return processed_data
-def freshness(image_path, api):
+def analyze_image(image_path):
     """Send the image to the endpoint and analyze freshness."""
     generic_template = '''
 You are a knowledgeable AI assistant. Analyze the uploaded image of one or more eatable items or products for their freshness and provide a customer-friendly report using the following format:
@@ -42,7 +42,7 @@ then please mention that the analysis of the respective field mentioned above is
 
     try:
         with open(image_path, 'rb') as file:
-            response = requests.post(api, files={'file': file})
+            response = requests.post(url, files={'file': file}, prompt=generic_template)
             print(response)
 
         if response.status_code == 200:

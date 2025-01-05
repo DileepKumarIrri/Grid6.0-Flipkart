@@ -12,6 +12,7 @@ import requests
 import json
 import base64
 from datetime import datetime,timedelta
+from insert_data import insert_packaged_goods
 # # Generate timestamps
 current_date = datetime.now()
 # current_date_str = current_date.strftime('%Y-%m-%d %H:%M:%S')
@@ -61,19 +62,44 @@ def process_response(raw_response):
             processed_data.append(item)
     return processed_data
 
-def count_grocery_items(image_path,api):
+def count_grocery_items(image_path):
+
+    prompt = f"""Task: Detect, identify, and count all distinct grocery items present in the given image.
+    Instructions:
+    Count all items: Identify and count every visible grocery item in the image, ensuring the total count is as high as possible, even if item names or expiry dates cannot be identified.
+    Detect brand names: Recognize and list the brand names of items, if possible. If multiple items of the same brand are present, provide the count for that brand.
+    Detect expiry dates: For each brand, attempt to recognize the expiry date of the items as dd/mm/yyyy, if visible. If no expiry date can be identified, mark it as "NA".
+    Important Rules for the Output:
+    strictly DO NOT include any extra text, explanations, or comments other than the output format.
+    If expiry date is "NA", then "Expired" and "Expected life span (Days)" should be "NA". 
+    Output format: json
+    [
+      {{
+        "TotalItems":{{total_no_of_items}}
+      }},
+      {{
+        "Sl no": {{serial_number}},
+        "Brand": "{{brand_name}}",
+        "Expiry date": "{{expiry_date or NA}}",
+        "Count": {{count}}
+      }}
+    ]"""
 
 # Send the POST request
     try:
         with open(image_path, 'rb') as file:
-            response = requests.post(url, files={'file': file})
+            response = requests.post(url, files={'file': file}, prompt=prompt)
             print(response)
+
+
+            response= process_response(response)  #process the response
 
         # print("Respo  nse Text:", response.text)
 
         # Attempt to parse JSON if the response is successful
         if response.status_code == 200:
             # print("Response JSON:", response.json())
+            insert_packaged_goods(response)
             response_json = response.json()
             return response_json
         else:
@@ -81,8 +107,7 @@ def count_grocery_items(image_path,api):
     except Exception as e:
         print("An error occurred:", str(e))
 
-image_path=r"C:\Users\irrid\Desktop\Grocery Items\image_1.jpeg"
-print(count_grocery_items(image_path,"api"))
+
 
 #<----------------------------------API CALL----------------------------------------->>
 

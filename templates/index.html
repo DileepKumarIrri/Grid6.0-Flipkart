@@ -1,51 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Vision</title>
-  <link rel="stylesheet" href="static/css/style.css">
-  <link rel="icon" href="static/images/flipkart.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Vision Technology</title>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-        <img src="static/images/flipkart.png" alt="Flipkart Logo"  class="small-logo">
-        <img src="static/images/grid.png" alt="Grid 6.0 Logo" class="large-logo">
-    </div>
-    <nav>
-      <a href="{{ url_for('home') }}">Home</a>
-      <a href="{{ url_for('about_us') }}">About Us</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Smart Vision Technology<br> with <span>Tech Hunters Team</span></h1>
-        <p>For instant Quality Check.</p>
-      </div>
-      <div class="hero-buttons">
-        <div class="button-container">
-          <button id="live-feed-btn">
-            <div class="icon">
-                <img src="static/images/cam.svg" alt="camera" >
-            </div>
-            <div class="button-text"><h2>Live Feed</h2></div>
-          </button>
+    <header>
+        <div class="logos">
+            <div class="logo1"><img src="static/assets/flipkart.svg" alt="flipkart"></div>
+            <div class="logo2"><img src="static/assets/grid.png" alt="Grid 6.0"></div>
         </div>
-        <div class="button-container">
-          <button id="upload-btn">
-            <div class="icon">
-                <img src="static/images/cloud.svg" alt="upload" >
+        <nav>
+            <div class="menu-toggle" id="menuToggle">
+                &#9776; <!-- Hamburger icon -->
             </div>
-            <div class="button-text" style="padding: 10px"><h2>Upload Image<br><small>or drop a file</small></h2></div>
+            <ul id="menu" class="menu">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('architectures') }}">Architecture</a></li>
+                <!-- <li><a href="#">Models</a></li> -->
+                <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+      <div class="buttons">
+          <button class="button-2" id="grocery">
+              <img src="static/assets/grocerylogo.png" alt="Grocery Icon" class="button-icon">Grocery Detection
           </button>
+          <button class="button-2" id="freshness">
+              <img src="static/assets/freshnesslogo.png" alt="Freshness Icon" class="button-icon">Freshness Detection
+          </button>
+          <!-- <button class="button-2" id="inspection">
+            <img src="static/assets/packaging.png" alt="Data Icon" class="button-icon">Packaging Inspection
+        </button><button class="button-2" id="bin_monitoring">
+            <img src="static/assets/bin.png" alt="Data Icon" class="button-icon">Bin Monitoring
+        </button> -->
+          <button class="button-2" id="data_anaylysis">
+              <img src="static/assets/analysislogo.png" alt="Data Icon" class="button-icon">Data Analysis
+          </button>
+      </div>  
+      <div class="container" style="margin-top: 20px;">
+        <h1>Smart Vision Technology</h1>
+        <h4>For instant Quality Check</h4>
+      </div>
+      <div class="cards">
+        <div class="card">
+            <div class="card-header">
+                <img src="static/assets/grocery.png" alt="grocery" class="main-icon">
+                <div>
+                    <h2 style="margin-top: 10px; font-size: 1.3rem;">Grocery Detection</h2>
+                </div>
+            </div>
+            <div class="card-body">
+                <p>Effortlessly extract key details from grocery items such as:</p>
+                <ul>
+                    <li>Brand Name</li>
+                    <li>Expiry Date</li>
+                    <li>Item Count</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <img src="static/assets/fruits.png" alt="grocery" class="main-icon">
+                <div>
+                    <h2 style="margin-top: 10px; font-size: 1.3rem;">Freshness Detection</h2>
+                </div>
+            </div>
+            <div class="card-body">
+                <p>Ensure the quality of your fresh produce items with:</p>
+                <ul style="margin-top: 25px;">
+                    <li>Freshness Index</li>
+                    <li>Expected Life Span</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <img src="static/assets/data.png" alt="grocery" class="main-icon">
+                <div>
+                    <h2 style="margin-top: 10px; font-size: 1.3rem;">Data Analysis</h2>
+                </div>
+            </div>
+            <div class="card-body">
+                <p>Make informed decisions with insightful visualizations like:</p>
+                <ul>
+                    <li>Bar Charts</li>
+                    <li>Line Graphs</li>
+                    <li>Pie Charts</li>
+                </ul>
+            </div>
         </div>
       </div>
-    </section>
-  </main>
+    <script>
 
-  <script src="static/js/main.js"></script>
+        document.getElementById('grocery').addEventListener('click', function () {
+            window.location.href = "/grocerydetection";
+        });
+
+        document.getElementById('freshness').addEventListener('click', function () {
+            window.location.href = "/freshnessdetection";
+        });
+
+        document.getElementById('data_anaylysis').addEventListener('click', function () {
+            window.location.href = "/dataanalysis";
+        });
+    </script>
 </body>
 </html>
