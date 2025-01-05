@@ -4,10 +4,10 @@
 ---
 
 # 🔍 Try out  
-## 💥🚀 [![Click Here](static/images/click.gif)](https://flipvision.tech/) 💥🚀  
+## 💥🚀 [![Click Here](static/images/click.gif)](https://flipmobile.tech/) 💥🚀  
 *Click the link and witness the power of Smart Vision Technology in action!*  
 
-**[🌐 https://flipvision.tech/](https://flipvision.tech/)**
+**[🌐 https://flipvision.tech/](https://flipmobile.tech/)**
 
 ---
 
