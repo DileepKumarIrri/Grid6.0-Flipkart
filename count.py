@@ -2,7 +2,7 @@
 # ##########################################################################################
 #<--------------------------------------Server-Client Model-------------------->>>
 
-puburl= "https://ab10-34-16-179-34.ngrok-free.app"
+puburl= "https://ef41-52-55-2-14.ngrok-free.app"
 
 import requests
 
@@ -81,7 +81,7 @@ def count_grocery_items(image_path,api):
     except Exception as e:
         print("An error occurred:", str(e))
 
-image_path=r"C:\Users\darkn\Desktop\images4.jpg"
+image_path=r"C:\Users\irrid\Desktop\Grocery Items\image_1.jpeg"
 print(count_grocery_items(image_path,"api"))
 
 #<----------------------------------API CALL----------------------------------------->>
