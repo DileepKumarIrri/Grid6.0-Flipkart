@@ -7,14 +7,15 @@
 ## 💥🚀 [![Click Here](static/images/click.gif)](https://flipmobile.tech/) 💥🚀  
 *Click the link and witness the power of Smart Vision Technology in action!*  
 ## 🌐 Available for Multiple Devices
+  - **For Mobile Users**:  
+  Explore on mobile at:  ----Old One
+  [irridileepkumar.me](https://irridileepkumar.me)
 
-- **For Desktop Users**:  
+- **!!!!!For Desktop Users**:  
   Visit the full experience at:  
   [https://flipvision.tech/](https://flipvision.tech/)
 
-- **For Mobile Users**:  
-  Explore on mobile at:  
-  [irridileepkumar.me](https://irridileepkumar.me)
+
 ---
 
 
