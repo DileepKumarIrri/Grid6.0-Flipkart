@@ -23,17 +23,6 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
-# Load API key
-try:
-    API_KEY = os.getenv("FIREWORKS_API_KEY")
-    if not API_KEY:
-        raise EnvironmentError("API key not found. Please set the FIREWORKS_API_KEY environment variable.")
-    else:
-        FIREWORKS_API_KEY = API_KEY
-except EnvironmentError as e:
-    print(f"Critical Error: {e}")
-    exit(1)
-
 
 def allowed_file(filename):
     """Check if file extension is allowed."""
@@ -163,6 +152,6 @@ def upload_image():
 
 if __name__ == '__main__':
     try:
-        app.run(debug=True)
+        app.run()
     except Exception as e:
         print(f"Error starting Flask application: {e}")
