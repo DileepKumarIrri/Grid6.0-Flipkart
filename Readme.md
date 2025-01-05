@@ -4,7 +4,7 @@
 ---
 
 # 🔍 Try out  
-## 💥🚀 [![Click Here](static/images/click.gif)](https://flipmobile.tech/) 💥🚀  
+## 💥🚀 [![Click Here](static/assets/click.gif)](https://flipmobile.tech/) 💥🚀  
 *Click the link and witness the power of Smart Vision Technology in action!*  
 ## 🌐 Available for Multiple Devices
   - **For Mobile Users**:  
