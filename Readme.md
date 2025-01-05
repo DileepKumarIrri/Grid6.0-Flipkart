@@ -17,6 +17,20 @@
 
 
 ---
+# Llama 3.2 Vision - Flipkart Fine-tuned Model
+
+Check out our latest quantized model for cutting-edge applications in vision tasks! 🎉  
+
+This model, **Llama 3.2 Vision**, is fine-tuned on Flipkart's dataset to deliver exceptional performance tailored for e-commerce vision tasks. It is designed to provide state-of-the-art accuracy with efficient deployment capabilities.
+
+## 🌟 Features
+- **Fine-tuned for e-commerce vision**: Optimized for tasks like product categorization, attribute detection, and visual search.
+- **Quantized for efficiency**: Faster inference with lower resource consumption, making it suitable for edge devices.
+- **Plug-and-play**: Seamlessly integrates with Hugging Face's ecosystem for quick experimentation and deployment.
+
+## 🔗 Model Access
+Explore and download the model here:  
+👉 [Llama 3.2 Vision - Flipkart Fine-tuned on Hugging Face](https://huggingface.co/irridileepkumar/Llama_3.2_Vision_FlipkartFinetuned)  
 
 
 ---
