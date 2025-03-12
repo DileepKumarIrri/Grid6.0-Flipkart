@@ -173,25 +173,65 @@ Below are some of the interface images showcasing key features of the Smart Visi
 
  ### Smart Vision Technology
 ```bash
-Smart Vision/
-│
-├── static/                     # Directory for static assets
-│   ├── css/                    # Stylesheets
-│   ├── images/                 # Image assets
-│   ├── js/                     # JavaScript files
-│   └── uploads/                # Directory for uploaded files
-│
-├── templates/                  # HTML templates
-│   ├── index.html         
-│   ├── live-feed.html        
-│   └── upload.html            
-│
-├── models/
-|
-├── .gitignore        
-├── app.py                      # Main application script
-├── count.py                    # Script for item counting functionality
-├── freshness.py                # Backend script for freshness detection
-|___
+Directory structure:
+└── dileepkumarirri-grid6.0-flipkart/
+    ├── Readme.md
+    ├── app.py
+    ├── count.py
+    ├── freshness.py
+    ├── insert_data.py
+    ├── requirements.txt
+    ├── Collected Data/
+    │   ├── atta&flours/
+    │   ├── Bathsoaps/
+    │   ├── Biscuits/
+    │   ├── creams&lotions/
+    │   ├── Detergent/
+    │   ├── DetergentSoap/
+    │   ├── Drinks/
+    │   ├── dryfruits/
+    │   ├── edibleoil/
+    │   ├── facewash/
+    │   ├── Freshness/
+    │   │   ├── Carrot/
+    │   │   ├── freshBanana/
+    │   │   ├── Mango/
+    │   │   ├── Orange/
+    │   │   └── Tomato/
+    │   ├── hairoil/
+    │   ├── Noodle/
+    │   ├── perfumess/
+    │   ├── Pickle/
+    │   ├── powder/
+    │   ├── pulses/
+    │   ├── rice/
+    │   ├── salt/
+    │   ├── shampoo/
+    │   ├── Soaps And Sampoos/
+    │   ├── Tea/
+    │   ├── ToothBrush/
+    │   └── Toothpaste/
+    ├── models/
+    │   ├── Fine_Tuning_of_Llama_3_2_Vision (1).ipynb
+    │   ├── Run_Llama_3_2_Multimodal.ipynb
+    │   └── Server.ipynb
+    ├── static/
+    │   ├── assets/
+    │   │   └── Databasearchitecture.JPG
+    │   ├── css/
+    │   │   ├── aboutusstyle.css
+    │   │   ├── style.css
+    │   │   └── styles.css
+    │   └── js/
+    │       ├── freshnessscript.js
+    │       └── groceryscript.js
+    └── templates/
+        ├── aboutus.html
+        ├── analysis.html
+        ├── architectures.html
+        ├── freshness.html
+        ├── grocery.html
+        └── index.html
+
 
 
