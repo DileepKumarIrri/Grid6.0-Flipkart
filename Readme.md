@@ -2,12 +2,11 @@
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For Instant Quality Check ✨  
 
 ---
-<!-- Embedded YouTube Video -->
-<div align="center">
-  <h2>🎥 Demo Video - Smart Vision Technology</h2>
-  <p>Watch the working demo of our system in action below! 👇</p>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/AVvWkzoLkIU" frameborder="0" allowfullscreen></iframe>
-</div>
+# 🎥 Demo Video - Smart Vision Technology
+Watch the working demo of our system in action below! 👇
+
+[![Watch on YouTube](https://img.youtube.com/vi/AVvWkzoLkIU/maxresdefault.jpg)](https://youtu.be/AVvWkzoLkIU)
+
 
 
 
