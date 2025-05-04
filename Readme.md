@@ -5,7 +5,7 @@
 # 🎥 Demo Video - Smart Vision Technology
 Watch the working demo of our system in action below! 👇
 
-
+## 💥🚀 [![Click Here](static/assets/click.gif)](https://youtu.be/AVvWkzoLkIU) 💥🚀  
 [![Watch on YouTube](https://img.youtube.com/vi/AVvWkzoLkIU/maxresdefault.jpg)](https://youtu.be/AVvWkzoLkIU)
 
 
