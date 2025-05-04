@@ -2,6 +2,14 @@
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For Instant Quality Check ✨  
 
 ---
+<!-- Embedded YouTube Video -->
+<div align="center">
+  <h2>🎥 Demo Video - Smart Vision Technology</h2>
+  <p>Watch the working demo of our system in action below! 👇</p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/AVvWkzoLkIU" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
 
 # 🔍 Try out  
 ## 💥🚀 [![Click Here](static/assets/click.gif)](https://flipmobile.tech/) 💥🚀  
