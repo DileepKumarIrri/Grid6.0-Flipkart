@@ -1,3 +1,10 @@
+# 🏆 1st Prize Winner - Flipkart GRID 6.0 👑
+
+We are proud to announce that **Smart Vision Technology** has won **1st Prize** at **Flipkart Grid 6.0** in the Computer Vision track!
+Our system stood out for its real-time grocery quality check powered by advanced ML models and intuitive web interface. 🚀🎉
+
+---
+
 # Smart Vision Technology 🤖  
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For Instant Quality Check ✨  
 
@@ -241,5 +248,5 @@ Directory structure:
         ├── grocery.html
         └── index.html
 
-
+Made with ❤️ by [Dileep Kumar Irri](https://dileepkumarirri.github.io/Port-Folio/) | Powered by Flipkart Grid 6.0 🚀
 
